@@ -458,6 +458,11 @@ footer .theme-by {
   .intro-header .page-heading h1 {
     font-size: 60px;
   }
+  .page-projectlogo img {
+    border: none;
+    display: block;
+    margin: 0 auto;
+  }
   .intro-header .post-heading h1 {
     font-size: 50px;
   }
