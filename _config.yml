@@ -24,8 +24,8 @@ description: A virtual proof that name is awesome!
 # List of links in the navigation bar
 navbar-links:
   About Me: "aboutme"
-  Resources:
-    - CP210x Linux Driver: "http://cp210x.etheus.net/"
+  Projects:
+    - CP210x Linux Driver: "CP210x_Linux_Driver"
     - SiUSBXp Linux Driver: "http://siusbxp.etheus.net/"
     - Quick Chart File Format Specification: "http://quickchart.etheus.net/"
 #  Author's home: "http://deanattali.com"
