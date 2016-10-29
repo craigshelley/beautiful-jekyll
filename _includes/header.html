@@ -55,14 +55,20 @@
 		    {% if include.type == "page" %}
             <hr class="small">
             <span class="{{ include.type }}-subheading">{{ page.subtitle }}</span>
+		
 			{% else %}
 			<h2 class="{{ include.type }}-subheading">{{ page.subtitle }}</h2>
 			{% endif %}
 		  {% endif %}
 		  
+		{% if page.projectlogo %}
+		<img class="{{ include.type }}-subheading" src="{{ page.projectlogo }}" alt="{{ page.title }}" />
+		{% endif %}
+		
 		  {% if include.type == "post" %}
 		  <span class="post-meta">Posted on {{ page.date | date: "%B %-d, %Y" }}</span>
 		  {% endif %}
+		
         </div>
       </div>
     </div>
