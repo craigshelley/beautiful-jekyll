@@ -62,7 +62,9 @@
 		  {% endif %}
 		  
 		{% if page.projectlogo %}
-		<img class="{{ include.type }}-subheading" src="{{ page.projectlogo }}" alt="{{ page.title }}" />
+		<div class="{{ include.type }}-projectlogo">
+		   <img class="{{ include.type }}-projectlogo" src="{{ page.projectlogo }}" alt="{{ page.title }}" />
+		</div>
 		{% endif %}
 		
 		  {% if include.type == "post" %}
