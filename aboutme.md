@@ -1,13 +1,26 @@
 ---
 layout: page
 title: About me
-subtitle: Why you'd want to go on a date with me
+subtitle: Self-Proclaimed Amateur Jack of Many Trades.
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+The following interests have drifted by, and resurface from time to time:
 
-- I rock a great mustache
-- I'm extremely loyal to my family
+- Electronics (analogue, digital, FPGAs, microprocessors)
+- Rock Climbing
+- Photography
+- Video Production/Editing
+- Music (Piano)
+- Retro-Computer Hardware
+- Languages (German)
+- Linux User since 1997
+- Machine code hacking
+- Skiing (I will snowboard one day)
+- Cycling (Road & MTB)
+- Engines and mechanical stuff
+- Android hacking
+- Open source software
+- C Programming
 
 What else do you need?
 
