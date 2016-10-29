@@ -2,10 +2,8 @@
 layout: page
 title: CP210x Linux Driver
 subtitle: Linux Driver for SiLabs CP2101, CP2102 and CP2013 USB to Serial Bridges
+projectlogo: /img/CP210x_Linux_Logo.png
 ---
-![CP210x Linux Driver](/img/CP210x_Linux_Logo.png)
-
-
 This is the project page for the Linux driver for CP2101, CP2102 and CP2103 based USB to serial bridges. The driver discussed here is 100% open source, and is licensed under the terms of the GNU General Public License.
 
 ## Project History
