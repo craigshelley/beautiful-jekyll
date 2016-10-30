@@ -18,7 +18,7 @@ subtitle: If it aint fixed, don't break it!
     </a>
 
     <p class="post-meta">
-      Posted on Posted on {{ post.date | date: "%-d" }}{% case { post.date | date: "%-d" } %}
+      Posted on Posted on {{ post.date | date: "%-d" }}{% case {{ post.date | date: "%-d" }} %}
 	    {% when '1' or '21' or '31' %}st
 	    {% when '2' or '22' %}nd
 	    {% when '3' or '23' %}rd
