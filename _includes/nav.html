@@ -30,6 +30,21 @@
           </li>
         {% endif %}
         {% endfor %}
+	      
+	      
+	      <li class="navlinks-container">
+            <a class="navlinks-parent" href="javascript:void(0)">Projects</a>		      
+            <div class="navlinks-children">
+{% for page in site.pages %}
+{% if page.pagetype=="project" %}
+		    <a href="{{ page.permalink }}">{{ page.title }}</a>		                  
+{% endif %}
+		    {% endfor %}
+            </div>
+          </li>
+	      
+	      
+	      
       </ul>
     </div>
 
