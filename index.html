@@ -22,7 +22,7 @@ subtitle: If it aint fixed, don't break it!
 
 <ul>{% for page in site.pages %}
 	{% if page.pagetype=="project" %}
-	<li>{{ page }}</li>
+	<li><a href="{{ page.permalink }}">{{ page.title }}</a></li>
 	{% endif %}
 {% endfor %}
 </ul>
