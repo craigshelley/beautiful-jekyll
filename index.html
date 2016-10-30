@@ -20,8 +20,10 @@ subtitle: If it aint fixed, don't break it!
 
 
 
-<ul>{% for link in site.pages %}
+<ul>{% for page in site.pages %}
+	{% if page.pagetype=="project" %}
 	<li>{{ link }}</li>
+	{% endif %}
 {% endfor %}
 </ul>
 		    
