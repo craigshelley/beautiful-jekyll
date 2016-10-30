@@ -13,7 +13,7 @@ subtitle: If it aint fixed, don't break it!
 
 <ul>{% for page in site.pages %}
 	{% if page.pagetype=="project" %}
-	<li><a href="{{ page.permalink }}">{{ page.title }}</a></li>
+	<li>{% include projectlink.html project=page</li>
 	{% endif %}
 {% endfor %}
 </ul>		    
