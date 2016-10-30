@@ -35,10 +35,10 @@
 	      <li class="navlinks-container">
             <a class="navlinks-parent" href="javascript:void(0)">Projects</a>		      
             <div class="navlinks-children">
-{% for page in site.pages %}
-{% if page.pagetype=="project" %}
-		    <a href="{{ page.permalink }}">{{ page.title }}</a>		                  
-{% endif %}
+		    {% for page in site.pages %}
+		    {% if page.pagetype=="project" %}
+		    {% include projectlink.html project=page %}	                  
+		    {% endif %}
 		    {% endfor %}
             </div>
           </li>
