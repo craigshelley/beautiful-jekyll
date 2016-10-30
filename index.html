@@ -5,16 +5,14 @@ subtitle: If it aint fixed, don't break it!
 ---
 
 <h2>Projects</h2>
-<ul>
-{% for link in site.navbar-links.Projects %}
-	<li>
-               {% for linkparts in link %}
+<p>The start of something new...
+<ul>{% for link in site.navbar-links.Projects %}
+	<li>{% for linkparts in link %}
                   {% include navbarlink.html link=linkparts %}
-                {% endfor %}
-	</li>
+                {% endfor %}</li>
 {% endfor %}
 </ul>
-
+</p>
 
  
 
