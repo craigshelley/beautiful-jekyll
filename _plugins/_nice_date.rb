@@ -3,5 +3,3 @@ module TextFilter
     "BeginMoose#{input}EndMoose"    
   end
 end
-
-Liquid::Template.register_filter(TextFilter)
