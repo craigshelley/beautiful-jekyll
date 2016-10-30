@@ -24,6 +24,8 @@ subtitle: If it aint fixed, don't break it!
 	    {% when '3' or '23' %}rd
 	    {% else %}th
 	    {% endcase %}{{ post.date | date: " %B %Y" }}
+	    
+	    with a test {{ "this is a test" | nice_date }} end of test
     </p>
 
     <div class="post-entry">
