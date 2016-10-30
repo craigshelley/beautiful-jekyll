@@ -5,29 +5,18 @@ subtitle: If it aint fixed, don't break it!
 ---
 
 <h2>Projects</h2>
-<h3>It's Alive!</h3>
 <p>
 	Work in progress starts here.
 	None of my projects have ever been finished and they often become someone else's responsibility to maintain.
 	This list is by no means complete, but as there is little else of much use on this page, you're probably going to find what you're looking for by using one of the following links;
 </p>
-<ul>{% for link in site.navbar-links.Projects %}
-	<li>{% for linkparts in link %}
-                  {% include navbarlink.html link=linkparts %}
-                {% endfor %}</li>
-{% endfor %}
-</ul>
-
-
 
 <ul>{% for page in site.pages %}
 	{% if page.pagetype=="project" %}
 	<li><a href="{{ page.permalink }}">{{ page.title }}</a></li>
 	{% endif %}
 {% endfor %}
-</ul>
-		    
-		    
+</ul>		    
 
 <div class="posts-list">
   {% for post in paginator.posts %}
