@@ -18,7 +18,7 @@ subtitle: If it aint fixed, don't break it!
     </a>
 
     <p class="post-meta">
-      Posted on Posted on {% assign d = post.date | date: "%-d"  %}
+      Posted on {% assign d = post.date | date: "%-d"  %}
 {% case d %}
   {% when '1' or '21' or '31' %}{{ d }}st
   {% when '2' or '22' %}{{ d }}nd
