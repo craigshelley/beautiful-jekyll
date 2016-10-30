@@ -3,6 +3,9 @@ layout: page
 title: Etheus
 subtitle: If it aint fixed, don't break it!
 ---
+{% for link in site.navbar-links %}
+Begin{{ link }}End
+{% endfor %}
 
 <div class="posts-list">
   {% for post in paginator.posts %}
