@@ -18,7 +18,14 @@ subtitle: If it aint fixed, don't break it!
     </a>
 
     <p class="post-meta">
-      Posted on {{ post.date | date: "%B %-d, %Y" }}
+      Posted on {{ post.date | date: "%-d" }}
+	    {% case page.date | date: "%-d" %}
+  {% when '1' or '21' or '31' %}{{ d }}st
+  {% when '2' or '22' %}{{ d }}nd
+  {% when '3' or '23' %}{{ d }}rd
+  {% else %}{{ d }}th
+  {% endcase %}
+	    {{ post.date | date: " %B %Y" }}
     </p>
 
     <div class="post-entry">
