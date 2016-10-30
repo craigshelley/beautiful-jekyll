@@ -3,13 +3,17 @@ layout: page
 title: Etheus
 subtitle: If it aint fixed, don't break it!
 ---
-{% for link in site.navbar-links.Projects %}
 
+<h2>Projects</h2>
+<ul>
+{% for link in site.navbar-links.Projects %}
+	<li>
                {% for linkparts in link %}
                   {% include navbarlink.html link=linkparts %}
                 {% endfor %}
-
+	</li>
 {% endfor %}
+</ul>
 
 
  
