@@ -21,6 +21,7 @@ The following interests have drifted by, and resurface from time to time:
 - Android hacking
 - Open source software
 - C Programming
+- Software Defined Radio
 
 What else do you need?
 
