@@ -49,8 +49,7 @@ After compiling, copy the library to your system's library directory.
  `rmmod cp210x`
  
 ## Credits
-Michael Heubeck - Testing, Debugging, Protocol Analysis.
-
+Michael Heubeck - Testing, Debugging, Protocol Analysis.  
 Craig Shelley - Author
 
 Although I cannot guarantee a timely response, use the contact links below if you have any questions or suggestions.
