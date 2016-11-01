@@ -10,7 +10,7 @@ projectlogo: SiUSBXp_Linux_Logo.png
 This is the project page for an open source implementation of the SiLabs USBXpress driver. USBXpress is a drop-in USB stack for the SiLabs C8051Fxxx series of microprocessors. SiLabs provide a closed source driver for Microsoft Windows, which provides a simple, yet powerful API. The driver discussed here is 100% open source alternative with an identical API, and is licensed under the terms of the GNU General Public Licence.
 
 ## Project History
-This project started when a SiLabs C8051Fxxx based battery analyser was accidentally misclassified as a CP210x. The [CP210x Linux Driver](CP210x Linux Driver) had patches applied to support the relevant device VID/PIDs, however the device was later found to be incompatible.
+This project started when a SiLabs C8051Fxxx based battery analyser was accidentally misclassified as a CP210x. The [CP210x Linux Driver](CP210x_Linux_Driver) had patches applied to support the relevant device VID/PIDs, however the device was later found to be incompatible.
 The Computerised Battery Analyser, a product from [West Mountain Radio](http://www.westmountainradio.com) uses a .NET application as a front-end. The .NET application would run under Linux, with a little encouragement, using [Mono](http://www.mono-project.com). However a Linux version of the USBXpress driver was not available.
 This driver was written with help from Michael Heubeck to allow devices using the USBXpress stack and application software to be ported to a Linux environment.
 
@@ -49,7 +49,8 @@ After compiling, copy the library to your system's library directory.
  `rmmod cp210x`
  
 ## Credits
-Michael Heubeck - Testing, Debugging, Protocol Analysis. 
+Michael Heubeck - Testing, Debugging, Protocol Analysis.
+
 Craig Shelley - Author
 
 Although I cannot guarantee a timely response, use the contact links below if you have any questions or suggestions.
