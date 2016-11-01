@@ -19,47 +19,23 @@ This driver is a fully userland implementation using [http://www.libusb.org libu
 
 ## Supported Features
 The following table lists the implementation status of the SiUSBXp API function calls.
-{| border="1" cellspacing="0" cellpadding="5"
-|- 
-!API Function
-!Status
-|-
-|SI_GetNumDevices 
-|Implemented
-|-
-|SI_GetProductString 
-|Implemented
-|-
-|SI_FillBuffer
-|Implemented
-|-
-|SI_Close
-|Implemented
-|-
-|Si_Read
-|Implemented
-|-
-|SI_Write
-|Implemented
-|-
-|SI_ResetDevice
-|'''Not Implemented'''
-|-
-|SI_DeviceIOControl
-|'''Not Implemented'''
-|-
-|SI_FlushBuffers
-|Implemented
-|-
-|SI_SetTimeouts
-|Implemented
-|-
-|SI_CheckRXQueue
-|Implemented
-|}
+
+|    API Function      |   Status    |
+|----------------------|-------------|
+| SI_GetNumDevices     | Implemented |
+| SI_GetProductString  | Implemented |
+| SI_FillBuffer        | Implemented |
+| SI_Close             | Implemented |
+| Si_Read              | Implemented |
+| SI_Write             | Implemented |
+| SI_ResetDevice       | **Not Implemented** |
+| SI_DeviceIOControl   | **Not Implemented** |
+| SI_FlushBuffers      | Implemented |
+| SI_SetTimeouts       | Implemented |
+| SI_CheckRXQueue      | Implemented |
 
 ## SiUSBXp Linux Driver Download
-[[media:SiUSBXp_v0.01.c|SiUSBXp_v0.01.c]] '''(latest)'''
+[SiUSBXp.c](https://raw.githubusercontent.com/craigshelley/SiUSBXp/master/SiUSBXp.c) **(latest)**
 
 ## Compiling and Installing
 To compile the library, you will need gcc and libusb-dev. The library can be compiled using the following command line;
