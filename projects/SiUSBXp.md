@@ -38,14 +38,14 @@ The following table lists the implementation status of the SiUSBXp API function 
 [SiUSBXp.c](https://raw.githubusercontent.com/craigshelley/SiUSBXp/master/SiUSBXp.c) **(latest)**
 
 ## Compiling and Installing
-To compile the library, you will need gcc and libusb-dev. The library can be compiled using the following command line;
- `gcc -shared -l usb -o libSiUSBXp.so SiUSBXp.c -Wall -fPIC`
-After compiling, copy the library to your system's library directory.
+To compile the library, you will need gcc and libusb-dev. The library can be compiled using the following command line;  
+ `gcc -shared -l usb -o libSiUSBXp.so SiUSBXp.c -Wall -fPIC`  
+After compiling, copy the library to your system's library directory.  
  `cp libSiUSBXp.so /usr/local/lib/`
 
 **Note 1:** In order to execute a program that uses libSiUSBXp.so, the USB device permissions must be configured correctly. This can be done manually by changing the permissions of the devices in /dev/bus/usb/..., however if the device is removed/reinserted the changes to the permissions may be lost. On most desktop systems, the permissions of devices can be configured permanently through [HAL](http://freedesktop.org/wiki/Software/hal).
 
-**Note 2:** Also ensure that no kernel drivers are blocking access to the device by unloading the relevant kernel modules using rmmod. e.g.
+**Note 2:** Also ensure that no kernel drivers are blocking access to the device by unloading the relevant kernel modules using rmmod. e.g.  
  `rmmod cp210x`
  
 ## Credits
