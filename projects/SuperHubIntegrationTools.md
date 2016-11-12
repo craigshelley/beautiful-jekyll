@@ -225,60 +225,59 @@ This should produce the following output:
 
 Here only one settings block was found because this was the dynamic settings area.
 You should now have the following new file:
-```
-my_modem.img.dynamic.param_00  (60793 bytes)
-```
+
+    my_modem.img.dynamic.param_00  (60793 bytes)
+
 
 Disassemble the settings block using:
-```
-disassemblesettings my_modem.img.dynamic.param_00 
-```
+
+    disassemblesettings my_modem.img.dynamic.param_00 
+
 
 This should produce the following output:
-```
-File:   my_modem.img.dynamic.param_00
-Length: 0x0000ed79
-CRC:    0x0f740199
-Object: 000  Addr: 0x000008  Size:    12  Magic: CMAp     > 'my_modem.img.dynamic.param_00_settings/000_CMAp.cobj'
-Object: 001  Addr: 0x000014  Size:    90  Magic: MLog     > 'my_modem.img.dynamic.param_00_settings/001_MLog.cobj'
-Object: 002  Addr: 0x00006e  Size:     9  Magic: F2A1F61F > 'my_modem.img.dynamic.param_00_settings/002_F2A1F61F.cobj'
-Object: 003  Addr: 0x000077  Size:   666  Magic: 8021     > 'my_modem.img.dynamic.param_00_settings/003_8021.cobj'
-Object: 004  Addr: 0x000311  Size:     8  Magic: 802S     > 'my_modem.img.dynamic.param_00_settings/004_802S.cobj'
-Object: 005  Addr: 0x000319  Size:    12  Magic: FACT     > 'my_modem.img.dynamic.param_00_settings/005_FACT.cobj'
-Object: 006  Addr: 0x000325  Size:    43  Magic: bpi20    > 'my_modem.img.dynamic.param_00_settings/006_bpi20.cobj'
-Object: 007  Addr: 0x000350  Size:    39  Magic: bpih     > 'my_modem.img.dynamic.param_00_settings/007_bpih.cobj'
-Object: 008  Addr: 0x000377  Size:    28  Magic: D0C20100 > 'my_modem.img.dynamic.param_00_settings/008_D0C20100.cobj'
-Object: 009  Addr: 0x000393  Size:    18  Magic: D0C20300 > 'my_modem.img.dynamic.param_00_settings/009_D0C20300.cobj'
-Object: 010  Addr: 0x0003a5  Size:  1589  Magic: CMEV     > 'my_modem.img.dynamic.param_00_settings/010_CMEV.cobj'
-Object: 011  Addr: 0x0009da  Size:  1060  Magic: snmp     > 'my_modem.img.dynamic.param_00_settings/011_snmp.cobj'
-Object: 012  Addr: 0x000dfe  Size:     8  Magic: DnSt     > 'my_modem.img.dynamic.param_00_settings/012_DnSt.cobj'
-Object: 013  Addr: 0x000e06  Size:     8  Magic: DnS1     > 'my_modem.img.dynamic.param_00_settings/013_DnS1.cobj'
-Object: 014  Addr: 0x000e0e  Size:     8  Magic: UpSt     > 'my_modem.img.dynamic.param_00_settings/014_UpSt.cobj'
-Object: 015  Addr: 0x000e16  Size:     8  Magic: UpS1     > 'my_modem.img.dynamic.param_00_settings/015_UpS1.cobj'
-Object: 016  Addr: 0x000e1e  Size:     8  Magic: UpS2     > 'my_modem.img.dynamic.param_00_settings/016_UpS2.cobj'
-Object: 017  Addr: 0x000e26  Size:     8  Magic: UpS3     > 'my_modem.img.dynamic.param_00_settings/017_UpS3.cobj'
-Object: 018  Addr: 0x000e2e  Size:     8  Magic: Ppan     > 'my_modem.img.dynamic.param_00_settings/018_Ppan.cobj'
-Object: 019  Addr: 0x000e36  Size:   174  Magic: RSTL     > 'my_modem.img.dynamic.param_00_settings/019_RSTL.cobj'
-Object: 020  Addr: 0x000ee4  Size: 32289  Magic: Ntgr     > 'my_modem.img.dynamic.param_00_settings/020_Ntgr.cobj'
-Object: 021  Addr: 0x008d05  Size:   123  Magic: PRNT     > 'my_modem.img.dynamic.param_00_settings/021_PRNT.cobj'
-Object: 022  Addr: 0x008d80  Size:    55  Magic: PS0DV    > 'my_modem.img.dynamic.param_00_settings/022_PS0DV.cobj'
-Object: 023  Addr: 0x008db7  Size:  1726  Magic: CAP2E    > 'my_modem.img.dynamic.param_00_settings/023_CAP2E.cobj'
-Object: 024  Addr: 0x009475  Size:  1545  Magic: CDP2E    > 'my_modem.img.dynamic.param_00_settings/024_CDP2E.cobj'
-Object: 025  Addr: 0x009a7e  Size:    53  Magic: CSP2E    > 'my_modem.img.dynamic.param_00_settings/025_CSP2E.cobj'
-Object: 026  Addr: 0x009ab3  Size:  3179  Magic: RG2E2E   > 'my_modem.img.dynamic.param_00_settings/026_RG2E2E.cobj'
-Object: 027  Addr: 0x00a71e  Size:  1806  Magic: cmp2E    > 'my_modem.img.dynamic.param_00_settings/027_cmp2E.cobj'
-Object: 028  Addr: 0x00ae2c  Size:  1162  Magic: CHEV     > 'my_modem.img.dynamic.param_00_settings/028_CHEV.cobj'
-Object: 029  Addr: 0x00b2b6  Size:    18  Magic: CQP2     > 'my_modem.img.dynamic.param_00_settings/029_CQP2.cobj'
-Object: 030  Addr: 0x00b2c8  Size: 11267  Magic: FIRE     > 'my_modem.img.dynamic.param_00_settings/030_FIRE.cobj'
-Object: 031  Addr: 0x00decb  Size:    15  Magic: VPNG     > 'my_modem.img.dynamic.param_00_settings/031_VPNG.cobj'
-Object: 032  Addr: 0x00deda  Size:    30  Magic: PPPS     > 'my_modem.img.dynamic.param_00_settings/032_PPPS.cobj'
-Object: 033  Addr: 0x00def8  Size:  3654  Magic: WiGu     > 'my_modem.img.dynamic.param_00_settings/033_WiGu.cobj'
-Object: 034  Addr: 0x00ed3e  Size:    59  Magic: ERT2E    > 'my_modem.img.dynamic.param_00_settings/034_ERT2E.cobj'
-```
+
+    File:   my_modem.img.dynamic.param_00
+    Length: 0x0000ed79
+    CRC:    0x0f740199
+    Object: 000  Addr: 0x000008  Size:    12  Magic: CMAp     > 'my_modem.img.dynamic.param_00_settings/000_CMAp.cobj'
+    Object: 001  Addr: 0x000014  Size:    90  Magic: MLog     > 'my_modem.img.dynamic.param_00_settings/001_MLog.cobj'
+    Object: 002  Addr: 0x00006e  Size:     9  Magic: F2A1F61F > 'my_modem.img.dynamic.param_00_settings/002_F2A1F61F.cobj'
+    Object: 003  Addr: 0x000077  Size:   666  Magic: 8021     > 'my_modem.img.dynamic.param_00_settings/003_8021.cobj'
+    Object: 004  Addr: 0x000311  Size:     8  Magic: 802S     > 'my_modem.img.dynamic.param_00_settings/004_802S.cobj'
+    Object: 005  Addr: 0x000319  Size:    12  Magic: FACT     > 'my_modem.img.dynamic.param_00_settings/005_FACT.cobj'
+    Object: 006  Addr: 0x000325  Size:    43  Magic: bpi20    > 'my_modem.img.dynamic.param_00_settings/006_bpi20.cobj'
+    Object: 007  Addr: 0x000350  Size:    39  Magic: bpih     > 'my_modem.img.dynamic.param_00_settings/007_bpih.cobj'
+    Object: 008  Addr: 0x000377  Size:    28  Magic: D0C20100 > 'my_modem.img.dynamic.param_00_settings/008_D0C20100.cobj'
+    Object: 009  Addr: 0x000393  Size:    18  Magic: D0C20300 > 'my_modem.img.dynamic.param_00_settings/009_D0C20300.cobj'
+    Object: 010  Addr: 0x0003a5  Size:  1589  Magic: CMEV     > 'my_modem.img.dynamic.param_00_settings/010_CMEV.cobj'
+    Object: 011  Addr: 0x0009da  Size:  1060  Magic: snmp     > 'my_modem.img.dynamic.param_00_settings/011_snmp.cobj'
+    Object: 012  Addr: 0x000dfe  Size:     8  Magic: DnSt     > 'my_modem.img.dynamic.param_00_settings/012_DnSt.cobj'
+    Object: 013  Addr: 0x000e06  Size:     8  Magic: DnS1     > 'my_modem.img.dynamic.param_00_settings/013_DnS1.cobj'
+    Object: 014  Addr: 0x000e0e  Size:     8  Magic: UpSt     > 'my_modem.img.dynamic.param_00_settings/014_UpSt.cobj'
+    Object: 015  Addr: 0x000e16  Size:     8  Magic: UpS1     > 'my_modem.img.dynamic.param_00_settings/015_UpS1.cobj'
+    Object: 016  Addr: 0x000e1e  Size:     8  Magic: UpS2     > 'my_modem.img.dynamic.param_00_settings/016_UpS2.cobj'
+    Object: 017  Addr: 0x000e26  Size:     8  Magic: UpS3     > 'my_modem.img.dynamic.param_00_settings/017_UpS3.cobj'
+    Object: 018  Addr: 0x000e2e  Size:     8  Magic: Ppan     > 'my_modem.img.dynamic.param_00_settings/018_Ppan.cobj'
+    Object: 019  Addr: 0x000e36  Size:   174  Magic: RSTL     > 'my_modem.img.dynamic.param_00_settings/019_RSTL.cobj'
+    Object: 020  Addr: 0x000ee4  Size: 32289  Magic: Ntgr     > 'my_modem.img.dynamic.param_00_settings/020_Ntgr.cobj'
+    Object: 021  Addr: 0x008d05  Size:   123  Magic: PRNT     > 'my_modem.img.dynamic.param_00_settings/021_PRNT.cobj'
+    Object: 022  Addr: 0x008d80  Size:    55  Magic: PS0DV    > 'my_modem.img.dynamic.param_00_settings/022_PS0DV.cobj'
+    Object: 023  Addr: 0x008db7  Size:  1726  Magic: CAP2E    > 'my_modem.img.dynamic.param_00_settings/023_CAP2E.cobj'
+    Object: 024  Addr: 0x009475  Size:  1545  Magic: CDP2E    > 'my_modem.img.dynamic.param_00_settings/024_CDP2E.cobj'
+    Object: 025  Addr: 0x009a7e  Size:    53  Magic: CSP2E    > 'my_modem.img.dynamic.param_00_settings/025_CSP2E.cobj'
+    Object: 026  Addr: 0x009ab3  Size:  3179  Magic: RG2E2E   > 'my_modem.img.dynamic.param_00_settings/026_RG2E2E.cobj'
+    Object: 027  Addr: 0x00a71e  Size:  1806  Magic: cmp2E    > 'my_modem.img.dynamic.param_00_settings/027_cmp2E.cobj'
+    Object: 028  Addr: 0x00ae2c  Size:  1162  Magic: CHEV     > 'my_modem.img.dynamic.param_00_settings/028_CHEV.cobj'
+    Object: 029  Addr: 0x00b2b6  Size:    18  Magic: CQP2     > 'my_modem.img.dynamic.param_00_settings/029_CQP2.cobj'
+    Object: 030  Addr: 0x00b2c8  Size: 11267  Magic: FIRE     > 'my_modem.img.dynamic.param_00_settings/030_FIRE.cobj'
+    Object: 031  Addr: 0x00decb  Size:    15  Magic: VPNG     > 'my_modem.img.dynamic.param_00_settings/031_VPNG.cobj'
+    Object: 032  Addr: 0x00deda  Size:    30  Magic: PPPS     > 'my_modem.img.dynamic.param_00_settings/032_PPPS.cobj'
+    Object: 033  Addr: 0x00def8  Size:  3654  Magic: WiGu     > 'my_modem.img.dynamic.param_00_settings/033_WiGu.cobj'
+    Object: 034  Addr: 0x00ed3e  Size:    59  Magic: ERT2E    > 'my_modem.img.dynamic.param_00_settings/034_ERT2E.cobj'
+
 A new directory should have been created:
-```
-my_modem.img.dynamic.param_00_settings  (Directory containing 35 objects)
-```
+
+    my_modem.img.dynamic.param_00_settings  (Directory containing 35 objects)
 
 The number of object files will vary depending on the firmware version installed, and what previous
 firmware versions have been installed.
@@ -288,24 +287,21 @@ Edit the files below in this case 020_Ntgr.cobj using a hex editor.
 Make the changes as indicated by the * characters in the following tables
 
 
-(1) Enable serial console: (Ntgr.cobj)
+### (1) Enable serial console: (Ntgr.cobj)
 
 Serial Console Disabled:
-```
-0000 26A0: 00 00 FF 00 00 00 00 00  00 00 00 00 00 00 00 00  ........ ........  
-0000 26B0: 00 00 00 00*00*C1 C1 C1  C1 00 FF FF FF FF FF FF  ........ ........  ******
-0000 26C0: FF FF FF FF FF FF FF FF  FF FF FF FF FF FF FF FF  ........ ........  
-```
+
+    0000 26A0: 00 00 FF 00 00 00 00 00  00 00 00 00 00 00 00 00  ........ ........  
+    0000 26B0: 00 00 00 00 <b>00</b> C1 C1 C1  C1 00 FF FF FF FF FF FF  ........ ........  ******
+    0000 26C0: FF FF FF FF FF FF FF FF  FF FF FF FF FF FF FF FF  ........ ........  
 
 Serial Console Enabled:
 
-```
-0000 26A0: 00 00 FF 00 00 00 00 00  00 00 00 00 00 00 00 00  ........ ........  
-0000 26B0: 00 00 00 00*04*C1 C1 C1  C1 00 FF FF FF FF FF FF  ........ ........  ******
-0000 26C0: FF FF FF FF FF FF FF FF  FF FF FF FF FF FF FF FF  ........ ........  
-```
+    0000 26A0: 00 00 FF 00 00 00 00 00  00 00 00 00 00 00 00 00  ........ ........  
+    0000 26B0: 00 00 00 00*04*C1 C1 C1  C1 00 FF FF FF FF FF FF  ........ ........  ******
+    0000 26C0: FF FF FF FF FF FF FF FF  FF FF FF FF FF FF FF FF  ........ ........  
 
-(2) Enable Remote Management: (Ntgr.cobj)
+### (2) Enable Remote Management: (Ntgr.cobj)
 
 ```
 0000 1420: 00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  ........ ........  
