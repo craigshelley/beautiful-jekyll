@@ -284,7 +284,7 @@ firmware versions have been installed.
 
 We now need to make alterations to activate the serial console, to enable remote management, and to activate telnet support on the LAN side.
 Edit the files below in this case 020_Ntgr.cobj using a hex editor.
-Make the changes as indicated by the * characters in the following tables
+Make the changes as indicated by the byte enclosed in square brackets in the following tables
 
 
 ### (1) Enable serial console: (Ntgr.cobj)
@@ -292,36 +292,36 @@ Make the changes as indicated by the * characters in the following tables
 Serial Console Disabled:
 
     0000 26A0: 00 00 FF 00 00 00 00 00  00 00 00 00 00 00 00 00  ........ ........  
-    0000 26B0: 00 00 00 00 <b>00</b> C1 C1 C1  C1 00 FF FF FF FF FF FF  ........ ........  ******
+    0000 26B0: 00 00 00 00[00]C1 C1 C1  C1 00 FF FF FF FF FF FF  ........ ........  ******
     0000 26C0: FF FF FF FF FF FF FF FF  FF FF FF FF FF FF FF FF  ........ ........  
 
 Serial Console Enabled:
 
     0000 26A0: 00 00 FF 00 00 00 00 00  00 00 00 00 00 00 00 00  ........ ........  
-    0000 26B0: 00 00 00 00*04*C1 C1 C1  C1 00 FF FF FF FF FF FF  ........ ........  ******
+    0000 26B0: 00 00 00 00[04]C1 C1 C1  C1 00 FF FF FF FF FF FF  ........ ........  ******
     0000 26C0: FF FF FF FF FF FF FF FF  FF FF FF FF FF FF FF FF  ........ ........  
 
 ### (2) Enable Remote Management: (Ntgr.cobj)
 
-```
-0000 1420: 00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  ........ ........  
-0000 1430: 00 00 00 00 00 87 07*12* 17 00 00 00 50 00 00 00  ........ ....P...  ***** 
-0000 1440: 50 00 00 1F 90 00 00 00  50 01 61 64 6D 69 6E 00  P....... P.admin.  
-0000 1450: 00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  ........ ........  
-0000 1460: 00 00 00 00 00 00 00 00  00 63 68 61 6E 67 65 6D  ........ .changem  
-0000 1470: 65 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  e....... ........  
-0000 1480: 00 00 00 00 00 00 00 00  00 00 00 02*00*17 00 00  ........ ........  *****
-0000 1490: 00 17 00 00 00 17 00 00  00 17 00 00 00 17 01 61  ........ .......a  
-0000 14A0: 64 6D 69 6E 00 00 00 00  00 00 00 00 00 00 00 00  dmin.... ........  
-0000 14B0: 00 00 00 00 00 00 00 00  00 00 00 00 00 00 63 68  ........ ......ch  
-0000 14C0: 61 6E 67 65 6D 65 00 00  00 00 00 00 00 00 00 00  angeme.. ........  
-0000 14D0: 00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  ........ ........  
-0000 14E0: 02*00*17 00 00 01 BB 00  00 01 BB 00 00 01 BB 00  ........ ........  *****
-0000 14F0: 00 01 BB 01 61 64 6D 69  6E 00 00 00 00 00 00 00  ....admi n.......  
-0000 1500: 00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  ........ ........  
-0000 1510: 00 00 00 63 68 61 6E 67  65 6D 65 00 00 00 00 00  ...chang eme.....  
-0000 1520: 00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  ........ ........  
-```
+See explanation below:
+
+    0000 1420: 00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  ........ ........  
+    0000 1430: 00 00 00 00 00 87 07[12] 17 00 00 00 50 00 00 00  ........ ....P...  ***** 
+    0000 1440: 50 00 00 1F 90 00 00 00  50 01 61 64 6D 69 6E 00  P....... P.admin.  
+    0000 1450: 00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  ........ ........  
+    0000 1460: 00 00 00 00 00 00 00 00  00 63 68 61 6E 67 65 6D  ........ .changem  
+    0000 1470: 65 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  e....... ........  
+    0000 1480: 00 00 00 00 00 00 00 00  00 00 00 02[00]17 00 00  ........ ........  *****
+    0000 1490: 00 17 00 00 00 17 00 00  00 17 00 00 00 17 01 61  ........ .......a  
+    0000 14A0: 64 6D 69 6E 00 00 00 00  00 00 00 00 00 00 00 00  dmin.... ........  
+    0000 14B0: 00 00 00 00 00 00 00 00  00 00 00 00 00 00 63 68  ........ ......ch  
+    0000 14C0: 61 6E 67 65 6D 65 00 00  00 00 00 00 00 00 00 00  angeme.. ........  
+    0000 14D0: 00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  ........ ........  
+    0000 14E0: 02[00]17 00 00 01 BB 00  00 01 BB 00 00 01 BB 00  ........ ........  *****
+    0000 14F0: 00 01 BB 01 61 64 6D 69  6E 00 00 00 00 00 00 00  ....admi n.......  
+    0000 1500: 00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  ........ ........  
+    0000 1510: 00 00 00 63 68 61 6E 67  65 6D 65 00 00 00 00 00  ...chang eme.....  
+    0000 1520: 00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  ........ ........  
 
 Change the byte indicated in accordance with the following bit mapping:
 
@@ -340,95 +340,83 @@ Notice in the hex editor how the username/password repeat 3 times. You will need
 byte indicated between the * characters above, and make the appropriate change to activate remote
 management.
 
-(3) Enable Telnet: (MLog.cobj)
+### (3) Enable Telnet: (MLog.cobj)
 
 Telnet Disabled:
-```
-0000 0010: 73 65 72 00 04 31 32 33  34 00 03 4D 53 4F 00 08  ser..123 4..MSO..  
-0000 0020: 63 68 61 6E 67 65 6D 65 *00*61 64 6D 69 6E 00 00  changeme .admin..  *******
-0000 0030: 00 00 00 00 00 00 00 00  00 70 61 73 73 77 6F 72  ........ .passwor  
-```
-Telnet Enabled:
-```
-0000 0010: 73 65 72 00 04 31 32 33  34 00 03 4D 53 4F 00 08  ser..123 4..MSO..  
-0000 0020: 63 68 61 6E 67 65 6D 65 *01*61 64 6D 69 6E 00 00  changeme .admin..  *******
-0000 0030: 00 00 00 00 00 00 00 00  00 70 61 73 73 77 6F 72  ........ .passwor  
-```
 
+    0000 0010: 73 65 72 00 04 31 32 33  34 00 03 4D 53 4F 00 08  ser..123 4..MSO..  
+    0000 0020: 63 68 61 6E 67 65 6D 65 *00*61 64 6D 69 6E 00 00  changeme .admin..  *******
+    0000 0030: 00 00 00 00 00 00 00 00  00 70 61 73 73 77 6F 72  ........ .passwor  
+    
+Telnet Enabled:
+
+    0000 0010: 73 65 72 00 04 31 32 33  34 00 03 4D 53 4F 00 08  ser..123 4..MSO..  
+    0000 0020: 63 68 61 6E 67 65 6D 65 *01*61 64 6D 69 6E 00 00  changeme .admin..  *******
+    0000 0030: 00 00 00 00 00 00 00 00  00 70 61 73 73 77 6F 72  ........ .passwor  
 
 Now we must reverse the data extraction procedure to reprogram the new settings.
 
-```
-assemblesettings my_modem.img.dynamic.param_00_settings/*.cobj my_modem.img.dynamic.param_00_modified
-```
+    assemblesettings my_modem.img.dynamic.param_00_settings/*.cobj my_modem.img.dynamic.param_00_modified
 
 This should produce the following output:
 
-```
-Reading:   my_modem.img.dynamic.param_00_settings/000_CMAp.cobj
-Reading:   my_modem.img.dynamic.param_00_settings/001_MLog.cobj
-Reading:   my_modem.img.dynamic.param_00_settings/002_F2A1F61F.cobj
-Reading:   my_modem.img.dynamic.param_00_settings/003_8021.cobj
-Reading:   my_modem.img.dynamic.param_00_settings/004_802S.cobj
-Reading:   my_modem.img.dynamic.param_00_settings/005_FACT.cobj
-Reading:   my_modem.img.dynamic.param_00_settings/006_bpi20.cobj
-Reading:   my_modem.img.dynamic.param_00_settings/007_bpih.cobj
-Reading:   my_modem.img.dynamic.param_00_settings/008_D0C20100.cobj
-Reading:   my_modem.img.dynamic.param_00_settings/009_D0C20300.cobj
-Reading:   my_modem.img.dynamic.param_00_settings/010_CMEV.cobj
-Reading:   my_modem.img.dynamic.param_00_settings/011_snmp.cobj
-Reading:   my_modem.img.dynamic.param_00_settings/012_DnSt.cobj
-Reading:   my_modem.img.dynamic.param_00_settings/013_DnS1.cobj
-Reading:   my_modem.img.dynamic.param_00_settings/014_UpSt.cobj
-Reading:   my_modem.img.dynamic.param_00_settings/015_UpS1.cobj
-Reading:   my_modem.img.dynamic.param_00_settings/016_UpS2.cobj
-Reading:   my_modem.img.dynamic.param_00_settings/017_UpS3.cobj
-Reading:   my_modem.img.dynamic.param_00_settings/018_Ppan.cobj
-Reading:   my_modem.img.dynamic.param_00_settings/019_RSTL.cobj
-Reading:   my_modem.img.dynamic.param_00_settings/020_Ntgr.cobj
-Reading:   my_modem.img.dynamic.param_00_settings/021_PRNT.cobj
-Reading:   my_modem.img.dynamic.param_00_settings/022_PS0DV.cobj
-Reading:   my_modem.img.dynamic.param_00_settings/023_CAP2E.cobj
-Reading:   my_modem.img.dynamic.param_00_settings/024_CDP2E.cobj
-Reading:   my_modem.img.dynamic.param_00_settings/025_CSP2E.cobj
-Reading:   my_modem.img.dynamic.param_00_settings/026_RG2E2E.cobj
-Reading:   my_modem.img.dynamic.param_00_settings/027_cmp2E.cobj
-Reading:   my_modem.img.dynamic.param_00_settings/028_CHEV.cobj
-Reading:   my_modem.img.dynamic.param_00_settings/029_CQP2.cobj
-Reading:   my_modem.img.dynamic.param_00_settings/030_FIRE.cobj
-Reading:   my_modem.img.dynamic.param_00_settings/031_VPNG.cobj
-Reading:   my_modem.img.dynamic.param_00_settings/032_PPPS.cobj
-Reading:   my_modem.img.dynamic.param_00_settings/033_WiGu.cobj
-Reading:   my_modem.img.dynamic.param_00_settings/034_ERT2E.cobj
-
-Length:    0x0000ed79
-Checksum:  0x0f740199
-Writing:   my_modem.img.dynamic.param_00_modified
-```
-
+    Reading:   my_modem.img.dynamic.param_00_settings/000_CMAp.cobj
+    Reading:   my_modem.img.dynamic.param_00_settings/001_MLog.cobj
+    Reading:   my_modem.img.dynamic.param_00_settings/002_F2A1F61F.cobj
+    Reading:   my_modem.img.dynamic.param_00_settings/003_8021.cobj
+    Reading:   my_modem.img.dynamic.param_00_settings/004_802S.cobj    
+    Reading:   my_modem.img.dynamic.param_00_settings/005_FACT.cobj
+    Reading:   my_modem.img.dynamic.param_00_settings/006_bpi20.cobj
+    Reading:   my_modem.img.dynamic.param_00_settings/007_bpih.cobj
+    Reading:   my_modem.img.dynamic.param_00_settings/008_D0C20100.cobj
+    Reading:   my_modem.img.dynamic.param_00_settings/009_D0C20300.cobj
+    Reading:   my_modem.img.dynamic.param_00_settings/010_CMEV.cobj
+    Reading:   my_modem.img.dynamic.param_00_settings/011_snmp.cobj
+    Reading:   my_modem.img.dynamic.param_00_settings/012_DnSt.cobj
+    Reading:   my_modem.img.dynamic.param_00_settings/013_DnS1.cobj
+    Reading:   my_modem.img.dynamic.param_00_settings/014_UpSt.cobj
+    Reading:   my_modem.img.dynamic.param_00_settings/015_UpS1.cobj
+    Reading:   my_modem.img.dynamic.param_00_settings/016_UpS2.cobj
+    Reading:   my_modem.img.dynamic.param_00_settings/017_UpS3.cobj
+    Reading:   my_modem.img.dynamic.param_00_settings/018_Ppan.cobj
+    Reading:   my_modem.img.dynamic.param_00_settings/019_RSTL.cobj
+    Reading:   my_modem.img.dynamic.param_00_settings/020_Ntgr.cobj
+    Reading:   my_modem.img.dynamic.param_00_settings/021_PRNT.cobj
+    Reading:   my_modem.img.dynamic.param_00_settings/022_PS0DV.cobj
+    Reading:   my_modem.img.dynamic.param_00_settings/023_CAP2E.cobj
+    Reading:   my_modem.img.dynamic.param_00_settings/024_CDP2E.cobj
+    Reading:   my_modem.img.dynamic.param_00_settings/025_CSP2E.cobj
+    Reading:   my_modem.img.dynamic.param_00_settings/026_RG2E2E.cobj
+    Reading:   my_modem.img.dynamic.param_00_settings/027_cmp2E.cobj
+    Reading:   my_modem.img.dynamic.param_00_settings/028_CHEV.cobj
+    Reading:   my_modem.img.dynamic.param_00_settings/029_CQP2.cobj
+    Reading:   my_modem.img.dynamic.param_00_settings/030_FIRE.cobj
+    Reading:   my_modem.img.dynamic.param_00_settings/031_VPNG.cobj
+    Reading:   my_modem.img.dynamic.param_00_settings/032_PPPS.cobj
+    Reading:   my_modem.img.dynamic.param_00_settings/033_WiGu.cobj
+    Reading:   my_modem.img.dynamic.param_00_settings/034_ERT2E.cobj
+    
+    Length:    0x0000ed79
+    Checksum:  0x0f740199
+    Writing:   my_modem.img.dynamic.param_00_modified
+    
 Note: Your checksum will be different to the one shown above, and should be different from the original checksum.
 You should now have the following new file:
 
-```
-my_modem.img.dynamic.param_00_modified (60793 Bytes)
-```
+    my_modem.img.dynamic.param_00_modified (60793 Bytes)
 
 Note: The size may be different from shown above, but should be identical to the original file size.
 
 Next, rebuild the dynamic settings memory image:
 
-```
-repacksettings my_modem.img.dynamic.param_00_modified my_modem.img.dynamic_modified
-```
+    repacksettings my_modem.img.dynamic.param_00_modified my_modem.img.dynamic_modified
 
 This should produce the following output:
 
-```
-Block 00, Opening my_modem.img.dynamic.param_00_modified
-Blocksize: 0x00010000
-Block 00, Bytes Read: 0x0000ed79
-Writing to: my_modem.img.dynamic_modified
-```
+    Block 00, Opening my_modem.img.dynamic.param_00_modified
+    Blocksize: 0x00010000
+    Block 00, Bytes Read: 0x0000ed79
+    Writing to: my_modem.img.dynamic_modified
 
 You should now have the following new file:
 
@@ -436,22 +424,17 @@ You should now have the following new file:
 my_modem.img.dynamic_modified (65536 Bytes)
 ```
 
-Now program the dynamic settings back to the EEPROM:
+Finally, program the dynamic settings back to the EEPROM:
 
-```
-spi_prog /dev/ttyUSB0 -w 0x7F0000 my_modem.img.dynamic_modified
-```
+    spi_prog /dev/ttyUSB0 -w 0x7F0000 my_modem.img.dynamic_modified
 
 This should produce the following output:
 
-```
-Flushing buffers...
-Handshake..
-Query ID..
-Device ID 0x010216
-Erasing 0x007f0000-0x007fffff (0x00010000)...
-Writing data 0x007f0000-0x00800000 (0x00010000)...
-```
+    Flushing buffers...
+    Handshake..
+    Query ID..
+    Device ID 0x010216
+    Erasing 0x007f0000-0x007fffff (0x00010000)...
+    Writing data 0x007f0000-0x00800000 (0x00010000)...
 
 That's it boot up your modem, and you should have telnet and serial console access.
-
