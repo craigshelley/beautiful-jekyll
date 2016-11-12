@@ -142,6 +142,7 @@ The compiled binaries now need to be manually copied to somewhere that is on the
 In this example, we will extract the firmware from a modem using the SPI programmer.
 The extracted firmware will be modified to enable the serial console and telnet. The modified firmware will then be writtend back using the SPI programmer utility.
 
+### (1) Read the Firmware Image from the Modem's EEPROM
 
 First extract a full backup image of the whole EEPROM. This takes about 12 Minutes.
 Ensure you see the line "Device ID 0x010216" displayed, otherwise there may be a communication 
@@ -175,7 +176,9 @@ Verify that the file contains data using a hex editor:
 If this has succeeded, then you have successfully created a backup of the whole EEPROM,
 which can be restored to at any point in the future if things go wrong. Keep the file safe!
 
-Next extract the various firmware components using:
+### (2) Extract the Firmware Components from the Firmware Image
+
+Extract the various firmware components using:
 
     extractmemorydump my_modem.img 
 
@@ -287,7 +290,7 @@ Edit the files below in this case 020_Ntgr.cobj using a hex editor.
 Make the changes as indicated by the byte enclosed in square brackets in the following tables
 
 
-### (1) Enable serial console: (Ntgr.cobj)
+### (3) Enable serial console: (Ntgr.cobj)
 
 Serial Console Disabled:
 
@@ -301,7 +304,7 @@ Serial Console Enabled:
     0000 26B0: 00 00 00 00[04]C1 C1 C1  C1 00 FF FF FF FF FF FF  ........ ........  ******
     0000 26C0: FF FF FF FF FF FF FF FF  FF FF FF FF FF FF FF FF  ........ ........  
 
-### (2) Enable Remote Management: (Ntgr.cobj)
+### (4) Enable Remote Management: (Ntgr.cobj)
 
 See explanation below:
 
@@ -340,19 +343,21 @@ Notice in the hex editor how the username/password repeat 3 times. You will need
 byte indicated between the * characters above, and make the appropriate change to activate remote
 management.
 
-### (3) Enable Telnet: (MLog.cobj)
+### (5) Enable Telnet: (MLog.cobj)
 
 Telnet Disabled:
 
     0000 0010: 73 65 72 00 04 31 32 33  34 00 03 4D 53 4F 00 08  ser..123 4..MSO..  
-    0000 0020: 63 68 61 6E 67 65 6D 65 *00*61 64 6D 69 6E 00 00  changeme .admin..  *******
+    0000 0020: 63 68 61 6E 67 65 6D 65 [00]61 64 6D 69 6E 00 00  changeme .admin..  *******
     0000 0030: 00 00 00 00 00 00 00 00  00 70 61 73 73 77 6F 72  ........ .passwor  
     
 Telnet Enabled:
 
     0000 0010: 73 65 72 00 04 31 32 33  34 00 03 4D 53 4F 00 08  ser..123 4..MSO..  
-    0000 0020: 63 68 61 6E 67 65 6D 65 *01*61 64 6D 69 6E 00 00  changeme .admin..  *******
+    0000 0020: 63 68 61 6E 67 65 6D 65 [01]61 64 6D 69 6E 00 00  changeme .admin..  *******
     0000 0030: 00 00 00 00 00 00 00 00  00 70 61 73 73 77 6F 72  ........ .passwor  
+
+### (6) Rebuild the Modem Firmware Image
 
 Now we must reverse the data extraction procedure to reprogram the new settings.
 
@@ -423,7 +428,7 @@ You should now have the following new file:
 ```
 my_modem.img.dynamic_modified (65536 Bytes)
 ```
-
+### (7) Write the Firmware Image to the Modem's EEPROM
 Finally, program the dynamic settings back to the EEPROM:
 
     spi_prog /dev/ttyUSB0 -w 0x7F0000 my_modem.img.dynamic_modified
