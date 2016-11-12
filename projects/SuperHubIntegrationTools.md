@@ -280,12 +280,13 @@ A new directory should have been created:
 The number of object files will vary depending on the firmware version installed, and what previous
 firmware versions have been installed.
 
+### (4) Modify Settings
 We now need to make alterations to activate the serial console, to enable remote management, and to activate telnet support on the LAN side.
 Edit the files below in this case 020_Ntgr.cobj using a hex editor.
 Make the changes as indicated by the byte enclosed in square brackets in the following tables
 
 
-### (4) Enable serial console: (Ntgr.cobj)
+#### Enable serial console: (Ntgr.cobj)
 Serial Console Disabled:
 
     0000 26A0: 00 00 FF 00 00 00 00 00  00 00 00 00 00 00 00 00  ........ ........  
@@ -298,7 +299,7 @@ Serial Console Enabled:
     0000 26B0: 00 00 00 00[04]C1 C1 C1  C1 00 FF FF FF FF FF FF  ........ ........  ******
     0000 26C0: FF FF FF FF FF FF FF FF  FF FF FF FF FF FF FF FF  ........ ........  
 
-### (5) Enable Remote Management: (Ntgr.cobj)
+#### Enable Remote Management: (Ntgr.cobj)
 See explanation below:
 
     0000 1420: 00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  ........ ........  
@@ -336,7 +337,7 @@ Notice in the hex editor how the username/password repeat 3 times. You will need
 byte indicated between the * characters above, and make the appropriate change to activate remote
 management.
 
-### (6) Enable Telnet: (MLog.cobj)
+#### Enable Telnet: (MLog.cobj)
 Telnet Disabled:
 
     0000 0010: 73 65 72 00 04 31 32 33  34 00 03 4D 53 4F 00 08  ser..123 4..MSO..  
@@ -349,7 +350,7 @@ Telnet Enabled:
     0000 0020: 63 68 61 6E 67 65 6D 65 [01]61 64 6D 69 6E 00 00  changeme .admin..  *******
     0000 0030: 00 00 00 00 00 00 00 00  00 70 61 73 73 77 6F 72  ........ .passwor  
 
-### (7) Rebuild the Dynamic Settings Image File
+### (5) Rebuild the Dynamic Settings Image File
 Now we must reverse the data extraction procedure to reprogram the new settings.
 
     assemblesettings my_modem.img.dynamic.param_00_settings/*.cobj my_modem.img.dynamic.param_00_modified
@@ -418,7 +419,7 @@ You should now have the following new file:
 
     my_modem.img.dynamic_modified (65536 Bytes)
 
-### (8) Write the Firmware Image to the Modem's EEPROM
+### (6) Write the Firmware Image to the Modem's EEPROM
 Finally, program the dynamic settings back to the EEPROM:
 
     spi_prog /dev/ttyUSB0 -w 0x7F0000 my_modem.img.dynamic_modified
