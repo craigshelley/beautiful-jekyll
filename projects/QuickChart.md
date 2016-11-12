@@ -4,6 +4,7 @@ pagetype: project
 permalink: /Quick_Chart_File_Format
 title: Quick Chart File Format
 subtitle: File Format Specification for Quick Chart (QCT) Compressed Raster Image Files
+projectlogo: QCTSpecThumbBook.png
 ---
 The Quick Chart file format (.QCT file extension) is a proprietary raster image format designed for storing high resolution maps. It allows the images to be decoded with very little processing overhead, while having an appreciable level of lossless compression. Geographical data embedded within the header allows the image to be mapped in terms of latitude and longitude.
 Quick Chart is an efficient file format for map data because indexes within the file allow the relevent areas to be decoded at the desired level of magnification without having to process the entire file.
