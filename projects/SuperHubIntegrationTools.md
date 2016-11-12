@@ -8,7 +8,7 @@ projectlogo: SuperHubIntegrationTools.png
 ---
 This is the project page for a comprehensive suite of command line utilities for manipulating the firmware and settings of the Super Hub (VMDG480), also known as the Netgear CG3101D. 
 
-**WARNING 1 CABLE MODEMS ARE OFTEN THE PROPERTY OF THE SERVICE PROVIDER.** You may therefore not be permitted to disassemble or modify your modem. For experimentation, obtaining one at a reasonable price from a popular internet auction site may be preferable.
+**WARNING 1: CABLE MODEMS ARE OFTEN THE PROPERTY OF THE SERVICE PROVIDER.** You may therefore not be permitted to disassemble or modify your modem. For experimentation, obtaining one at a reasonable price from a popular internet auction site may be preferable.
 
 **WARNING 2: CABLE MODEMS CONTAIN FACTORY CALIBRATION DATA** Each modem contains unique settings and calibration
 data and it is not advisable to exchange the permanent settings data between modems. The calibration data within the permanent
