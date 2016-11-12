@@ -17,7 +17,7 @@ the measured and transmitted power levels to be inaccurate, and could cause the 
 devices on the network.
 
 ## Reason for Development
-These utilities were developed with the primary intention of activating the built-in debugging features on the author's modem. This was needed because the service provider was unhelpful at addressing frequent disconnects and latch-ups which were severly affecting the quality of service. It was eventually determined that an automatic firmware update had been applied which contained unstable firmware. These tools were eventually used to downgrade the modem firmware to an earlier version which didn't exhibit the problem.
+These utilities were developed with the primary intention of activating the built-in debugging features on the author's modem. This was needed because the service provider was unhelpful at addressing frequent disconnects and latch-ups which were severely affecting the quality of service. It was eventually determined that an automatic firmware update had been applied which contained unstable firmware. These tools were eventually used to downgrade the modem firmware to an earlier version which didn't exhibit the problem.
 
 Ultimately, the service provider addressed the problem with a further firmware update. However the author no longer uses cable internet services provided by this supplier.
 
@@ -41,7 +41,7 @@ These being:
 * Permanent Settings - Factory defaults, calibration data, certificates, per-device config eg MAC address
 * Firmware Image1 - The software which runs on the router
 * Firmware Image2 - A backup of the previous version of software (optional)
-* Dynamic Settings - User configuration data, e.g. passwords, network configuraion, system logs etc...
+* Dynamic Settings - User configuration data, e.g. passwords, network configuration, system logs etc...
 
 ### unpacksettings
 This utility extracts the settings blocks from a 64k settings memory image obtained from extractmemorydump.
