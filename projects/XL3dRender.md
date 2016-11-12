@@ -6,16 +6,15 @@ title: Excel 3D Rendering
 subtitle: Draw 3D Wireframe Graphics using a Microsoft Excel VBA Macro
 projectlogo: XL3DRender.png
 ---
-
-[[Image:XL3DRender.png|350px|thumb|right|XL3DRender In Action]]
 XL3DRender is a Microsoft Excel VBA macro (Office 97) which draws animated 3D wire frame graphics using a spreadsheet as raster pixel array. By making the spreadsheet cells very small and turning off the grid lines, a basic raster display can be produced by changing the background colour of the cells. With a bit of imagination it is possible to use this to generate graphical output, or even draw 3D shapes or animations.
 
 ## The Idea
-The idea came from a 3D cinematic effect I had seen used by a traditional travelling theatre. The effect produced a smooth 3D fly through of a wire frame cathedral and town projected onto the screen from the back. This visualisation blew my mind since the entire perfomance was low-tech, no electrical or battery powered appliances were used. This ruled out the use of cameras, projectors and all lighting in the theatre was either by means of candle, gas, limelight etc..
+In some spare time in the summer of 2002 a work colleague, Christopher Allen was working on the idea of writing a simple game such as Snake to run in Excel. I had previously demonstrated a simple [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life Life) using the background colour of the spreadsheet cells, however we ran into difficulties while trying to get interactive user input to work correctly.
 
-I later discovered that they had used a real wire frame model and a very bright point light source, possibly a magnesium ribbon. The shadow produced on the screen was a shadow image taken from a view point at the light and looking in the direction of the screen. The fly through effect was achieved by simply moving the wire frame model over the light source. Words cannot describe how impressive this visualisation was, given that no technology post 1880 was used.
+One weekend, I visited a performance by a traditional travelling theatre. At one point in the performance, a 3D visualisation was projected onto a screen in the middle of the stage. The effect produced a smooth 3D fly through of a wire frame cathedral and town projected onto the screen from the back. This visualisation blew my mind since the entire perfomance was low-tech, no electrical or battery powered appliances were used. This ruled out the use of cameras, projectors and all lighting in the theatre was either by means of candle, gas, limelight etc.. The theatre was basically a tent in a field.
+
+I later discovered that they had used a real wire frame model and a very bright point light source, possibly a magnesium ribbon. The shadow produced on the screen was a shadow image taken from a view point at the light and looking in the direction of the screen. The fly through effect was achieved by simply moving the wire frame model over the light source. They must have had steady hands. Words cannot describe how impressive this visualisation was, given that no technology post 1880 was used.
 ![3D Projection](img/XL3DRender-3DProjection.png)
-In some spare time in the summer of 2002 a work colleague, Christopher Allen was working on the idea of writing a simple game such as Snake to run in Excel. I had previously demonstrated a simple [http://en.wikipedia.org/wiki/Conway%27s_Game_of_Life Life] algorithm, however we ran into difficulties while trying to get interactive user input to work correctly.
 While explaining the amazing 3D shadow effect I had seen, we figured that it would theoretically be possible to produce such an image using an Excel spreadsheet. And why not!
 
 ## Implementation
