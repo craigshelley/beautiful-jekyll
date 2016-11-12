@@ -22,7 +22,6 @@ These utilities have been developed with the intention that they are used for *L
 The utilities have been provided in source code form, and must be compiled in order to use them.
 
 All source code is distributed under the terms of the GNU General Public Licence.
-
     This is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
