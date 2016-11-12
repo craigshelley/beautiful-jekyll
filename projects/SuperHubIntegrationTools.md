@@ -4,7 +4,7 @@ pagetype: project
 permalink: /Super_Hub_Integration_Tools
 title: Super Hub Integration Tools
 subtitle: A Suite of Utilities for Extracting, Modifying and Writing Cable Modem Firmware
-projectlogo: SuperHubIntegrationTools.png
+projectlogo: SuperHubIntegrationTools.jpg
 ---
 This is the project page for a comprehensive suite of command line utilities for manipulating the firmware and settings of the Super Hub (VMDG480), also known as the Netgear CG3101D. 
 
