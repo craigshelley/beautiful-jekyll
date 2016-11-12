@@ -7,16 +7,19 @@ subtitle: A Suite of Utilities for Extracting, Modifying and Writing Cable Modem
 projectlogo: SuperHubIntegrationTools.png
 ---
 This is the project page for a comprehensive suite of command line utilities for manipulating the firmware and settings of the Super Hub (VMDG480), also known as the Netgear CG3101D. 
-These utilities were developed with the primary intention of activating the built-in debugging features of the modem in order to identify why frequent disconnects and latch-ups were occuring after an automatic firmware update had been applied. The tools were eventually used to downgrade the modem firmware to an earlier version which didn't exhibit the problem.
-Ultimately, the service provider addressed the problem with a further firmware update.
 
 **WARNING 1 CABLE MODEMS ARE OFTEN THE PROPERTY OF THE SERVICE PROVIDER.** You may therefore not be permitted to disassemble or modify your modem. For experimentation, obtaining one at a reasonable price from a popular internet auction site may be preferable.
 
 **WARNING 2: CABLE MODEMS CONTAIN FACTORY CALIBRATION DATA** Each modem contains unique settings and calibration
-data and it is not advisable to exchange the permanent settings between modems. The calibration data within the permanent
-settings area has been generated in the factory using specialist equipment. Using incorrect calibration data will cause
+data and it is not advisable to exchange the permanent settings data between modems. The calibration data within the permanent
+settings area has been generated in the factory using specialist equipment. Using incorrect calibration data may cause
 the measured and transmitted power levels to be inaccurate, and could cause the modem to interfere with other
 devices on the network.
+
+## Reason for Development
+These utilities were developed with the primary intention of activating the built-in debugging features on the author's modem. This was needed because the service provider was unhelpful at addressing frequent disconnects and latch-ups which were severly affecting the quality of service. It was eventually determined that an automatic firmware update had been applied which contained unstable firmware. These tools were eventually used to downgrade the modem firmware to an earlier version which didn't exhibit the problem.
+
+Ultimately, the service provider addressed the problem with a further firmware update. However the author no longer uses cable internet services provided by this supplier.
 
 These utilities have been developed with the intention that they are used for *Legal Academic Purposes*.
 The utilities have been provided in source code form, and must be compiled in order to use them.
@@ -138,10 +141,10 @@ The compiled binaries now need to be manually copied to somewhere that is on the
 In this example, we will extract the firmware from a modem using the SPI programmer.
 The extracted firmware will be modified to enable the serial console and telnet. The modified firmware will then be writtend back using the SPI programmer utility.
 
-### (1) Read the Firmware Image from the Modem's EEPROM
-First extract a full backup image of the whole EEPROM. This takes about 12 Minutes.
-Ensure you see the line "Device ID 0x010216" displayed, otherwise there may be a communication 
-fault between the EEPROM and the PIC.
+### (1) Read the Firmware Image from the Modem's Flash Memory
+First extract a full backup image of the whole flash memory. This takes about 12 Minutes.
+Ensure you see the line `Device ID 0x010216` displayed, otherwise there may be a communication 
+fault between the flash memory chip and the PIC.
 
     spi_prog /dev/ttyUSB0 -r 0x000000 0x800000 my_modem.img
     
@@ -168,10 +171,10 @@ Verify that the file contains data using a hex editor:
     00000060   24 0B 00 02  01 4B 50 04  30 8B 00 07  21 6B 00 01  $....KP.0...!k..
     00000070   71 69 48 02  71 2A 48 02  10 00 00 03  00 00 00 00  qiH.q*H.........
 
-If this has succeeded, then you have successfully created a backup of the whole EEPROM,
+If this has succeeded, then you have successfully created a backup of the whole flash memory,
 which can be restored to at any point in the future if things go wrong. Keep the file safe!
 
-### (2) Extract the Component Firmware Image Files from the EEPROM Firmware Image
+### (2) Extract the Component Firmware Image Files from the Flash Memory Firmware Image
 Extract the various firmware components using:
 
     extractmemorydump my_modem.img 
@@ -419,8 +422,8 @@ You should now have the following new file:
 
     my_modem.img.dynamic_modified (65536 Bytes)
 
-### (6) Write the Firmware Image to the Modem's EEPROM
-Finally, program the dynamic settings back to the EEPROM:
+### (6) Write the Firmware Image to the Modem's Flash Memory
+Finally, program the dynamic settings back to the flash memory:
 
     spi_prog /dev/ttyUSB0 -w 0x7F0000 my_modem.img.dynamic_modified
 
