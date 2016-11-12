@@ -209,20 +209,20 @@ You should now have the following files new files:
 The file size of the main firmware image will vary with firmware version.
 
 Extract the dynamic settings area using:
-```
-unpacksettings my_modem.img.dynamic 
-```
-This should produce the following output:
-```
-Parameter Block Size:  0x00010000
-Allocated Block Count: 0xfffffffe (1 blocks allocated)
 
-0x00CA Settings Block 0:
-  Length: 0x0000ed79
-  CRC:    0x0f740199
-  Checksum is valid
-  Writing to file "my_modem.img.dynamic.param_00"
-```
+    unpacksettings my_modem.img.dynamic 
+    
+This should produce the following output:
+
+    Parameter Block Size:  0x00010000
+    Allocated Block Count: 0xfffffffe (1 blocks allocated)
+
+    0x00CA Settings Block 0:
+      Length: 0x0000ed79
+      CRC:    0x0f740199
+      Checksum is valid
+      Writing to file "my_modem.img.dynamic.param_00"
+
 Here only one settings block was found because this was the dynamic settings area.
 You should now have the following new file:
 ```
