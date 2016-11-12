@@ -9,30 +9,33 @@ projectlogo: SuperHubIntegrationTools.png
 This is the project page for a comprehensive suite of command line utilities for manipulating the firmware and settings of the Super Hub (VMDG480), also known as the Netgear CG3101D. 
 These utilities were developed with the primary intention of activating the built-in debugging features of the modem in order to identify why frequent disconnects and latch-ups were occuring after an automatic firmware update had been applied. The tools were eventually used to downgrade the modem firmware to an earlier version which didn't exhibit the problem.
 Ultimately, the service provider addressed the problem with a further firmware update.
+
 **WARNING 1 CABLE MODEMS ARE OFTEN PROPERTY OF THE SERVICE PROVIDER.** You may not be permitted to disassemble or modify them. For experimentation I recommend obtaining one from a popular internet auction site.
+
 **WARNING 2: CABLE MODEMS CONTAIN FACTORY CALIBRATION DATA** Each modem contains unique settings and calibration
 data and it is not advisable to exchange permanent settings between modems. The calibration data within the permanent
 settings area has been generated in the factory using a special rig. Using incorrect calibration data will cause
 the measured and transmitted power levels to be inaccurate, and could cause the modem to interfere with other
 devices on the network.
+
 These utilities have been developed with the intention that they are used for *Legal Academic Purposes*.
 The utilities have been provided in source code form, and must be compiled in order to use them.
 
 All source code is distributed under the terms of the GNU General Public Licence.
-```
-This is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
+    This is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
 
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
-```	
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+	
 
 ## SPIProgrammer
 This directory contains software and firmware and instructions for building your own SPI programmer to
