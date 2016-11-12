@@ -20,6 +20,7 @@ Permission is granted to copy, distribute and/or modify this document under the 
 
 ## Quick Chart (QCT) File Format Specificatios
 The Quick Chart specification can be downloaded in Portable Document Format format by following the links below;
+
 * [The Quick Chart File Format Specification 1.00.pdf](https://raw.githubusercontent.com/craigshelley/QuickChart/master/Specification/The Quick Chart File Format Specification 1.00.pdf)
 * [The Quick Chart File Format Specification 1.01.pdf](https://raw.githubusercontent.com/craigshelley/QuickChart/master/Specification/The Quick Chart File Format Specification 1.01.pdf)
 * [The Quick Chart File Format Specification 1.02.pdf](https://raw.githubusercontent.com/craigshelley/QuickChart/master/Specification/The Quick Chart File Format Specification 1.02.pdf)
