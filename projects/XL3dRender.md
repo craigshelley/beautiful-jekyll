@@ -9,19 +9,20 @@ projectlogo: XL3DRender.png
 XL3DRender is a Microsoft Excel VBA macro (Office 97) which draws animated 3D wire frame graphics using a spreadsheet as raster pixel array. By making the spreadsheet cells very small and turning off the grid lines, a basic raster display can be produced by changing the background colour of the cells. With a bit of imagination it is possible to use this to generate graphical output, or even draw 3D shapes or animations.
 
 ## The Idea
-In some spare time in the summer of 2002 a work colleague, Christopher Allen was working on the idea of writing a simple game such as Snake to run in Excel. The Snake game had received renewed popularity at the time due to its presence on affordable Nokia mobile phones. I had previously demonstrated a VBA macro of [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) using the background colour of the spreadsheet cells, however for a game such as Snake we ran into difficulties while trying to get interactive user input to work correctly. We came to the conclusion that VBA wasn't designed for writing games!
+In some spare time in the summer of 2002 a work colleague, Christopher Allen was working on the idea of writing a simple game such as Snake to run in Excel. The Snake game had received renewed popularity at the time due to its presence on affordable Nokia mobile phones. I had previously demonstrated a VBA macro of [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) using the background colour of the spreadsheet cells, however for a game such as Snake we ran into difficulties while trying to get interactive user input to work correctly. We came to the conclusion that VBA wasn't designed for writing games! Despite this, I had already written the code to draw basic shapes and lines using [Bresenham's line algorithm](https://en.wikipedia.org/wiki/Bresenham's_line_algorithm)
 
 One weekend, I visited a performance by a traditional travelling theatre. At one point in the performance, a 3D visualisation was projected onto a screen in the middle of the stage. The effect produced a smooth 3D fly through of a wire frame cathedral and town projected onto the screen from the back. This visualisation blew my mind since the entire perfomance was low-tech, no electrical or battery powered appliances were used. This ruled out the use of cameras, projectors and all lighting in the theatre was either by means of candle, gas, limelight etc.. The theatre was basically a tent in a field.
 
 I later discovered that they had produced this effect by using a real wire frame model and a very bright magnesium point light source. The shadow produced on the screen was a shadow image taken from a view point at the light and looking in the direction of the screen. The flying through effect was achieved by simply moving the wire frame model with steady hands over the light source. Words cannot describe how impressive this visualisation was, given that no technology post 1880 was used.
 ![3D Projection](img/XL3DRender-3DProjection.png)
-While explaining the amazing 3D shadow effect I had seen, we figured that it would theoretically be possible to produce such an image using an Excel spreadsheet. And why not!
+
+Afterwards, while describing the 3D visualisation effect, and explaining how it worked, we figured that it would theoretically be possible to produce such an image using an Excel and the drawing functions we had already written. Why not!
 
 ## Implementation
 By reducing the size of the cells of an Excel spreadsheet to one pixel per cell, and turning the grid lines off, a 2D imaging area can be produced. The background colour of the cells can be changed to change the colour of the pixels.
 
 ### Line Drawing Algorithm
-In order to draw anything on this plot area, the first step was to write a line drawing function. A fast line drawing algorithm I had previously used in assembly programming was the optimised implementation of [http://en.wikipedia.org/wiki/Bresenham's_line_algorithm Bresenham's Line Algorithm]. The use of this algorithm allowed the production of an excel function that could be given two sets of x,y coordinates, and would draw a line between the two points.
+The defacto line drawing algorithm for drawing straight lines on a raster display is the [Bresenham's line algorithm](https://en.wikipedia.org/wiki/Bresenham's_line_algorithm). This algorithm was implemented in VBA code, and a VBA function was created which draws a line between two sets of x,y coordinates.
 
 ### 3D Projection
 The next stage was to do the conversion from 3D coordinates to 2D. This was achieved by considering the geometry of the 3D shadow projection described above. The amount of perspective can be adjusted by moving the view point closer to the object. If the view point is moved so close that it falls inside the object, then a view from inside the object is projected. The distance between the view point and the screen changes the image scaling. Moving the screen closer makes the image smaller, just as you'd expect from shadow projection. One interesting property of this projection method that is not possible to achieve using genuine shadow projection, is the ability to move the screen so close to the object that part of the object lies in the screen, or indeed on the other side of it. There are no side effects of doing this, in fact it has its advantages because the extra flexibility on the scaling removes the need to post-scale the rendered image, thereby improving the rendering performance.
@@ -34,9 +35,8 @@ The animated fly through was achieved by rotating and offsetting the 3D object. 
 The problem of observing the image being rendered during the animation can be solved using a technique known as double buffering. This method involves having the next frame rendered on a hidden worksheet and once rendering is complete, the frame is displayed in its entirety. By using two worksheets (a double buffer), it is possible to use the hidden one for rendering, and then switch worksheets once the rendering is complete. This process ensures that the animated effect is preserved, and the viewer does not see any partially rendered images. This also gives a performance increase because the image being rendered is not being continually refreshed to the screen as each pixel is updated. Instead it gets drawn once when the active worksheet is flipped.
 
 ## Data Flow
-{|align="center"
-|[[Image:XL3DRender-dfd.png|XL3DRender Flow Diagram]]
-|}
+![XL3DRender Flow Diagram](img/XL3DRender-dfd.png)
+
 This 3D rendering engine can be summarised with a relatively simple data flow. The data originates from a spreadsheet table, with each row in the table representing a line to be drawn. The line is defined by an X1,Y1,Z1 starting point coordinate, and an X2,Y2,Z2 ending point coordinate.
 For each 3D coordinate, the coordinates are first rotated and offset, then projected into 2D, then a line is drawn between the start and end coordinates using the 2D line drawing algorithm. The rotation and offset are determined by arbitrary formulae that produce the rotation angles and offsets, and depends only on the frame number. This formula defines the animated rotation and panning effects. It could equally be replaced with a look-up table on a separate worksheet to give more flexibility over the rendered animation.
 
@@ -49,7 +49,7 @@ To download XL3DRender, follow the links below. Additional objects can be added 
 
 ## Credits
 * Christopher Allen - 3D objects, testing and debugging
-* [mailto:craig@microtron.org.uk Craig Shelley] - Rendering algorithm
+* [mailto:craig@microtron.org.uk Craig Shelley] - Coding
 
 If you have any questions/queries or have created new objects that you would like to share, just drop me an [mailto:craig@microtron.org.uk email].
 
