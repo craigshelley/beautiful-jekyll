@@ -344,7 +344,6 @@ byte indicated between the * characters above, and make the appropriate change t
 management.
 
 ### (5) Enable Telnet: (MLog.cobj)
-
 Telnet Disabled:
 
     0000 0010: 73 65 72 00 04 31 32 33  34 00 03 4D 53 4F 00 08  ser..123 4..MSO..  
@@ -358,7 +357,6 @@ Telnet Enabled:
     0000 0030: 00 00 00 00 00 00 00 00  00 70 61 73 73 77 6F 72  ........ .passwor  
 
 ### (6) Rebuild the Modem Firmware Image
-
 Now we must reverse the data extraction procedure to reprogram the new settings.
 
     assemblesettings my_modem.img.dynamic.param_00_settings/*.cobj my_modem.img.dynamic.param_00_modified
@@ -425,9 +423,8 @@ This should produce the following output:
 
 You should now have the following new file:
 
-```
-my_modem.img.dynamic_modified (65536 Bytes)
-```
+    my_modem.img.dynamic_modified (65536 Bytes)
+
 ### (7) Write the Firmware Image to the Modem's EEPROM
 Finally, program the dynamic settings back to the EEPROM:
 
