@@ -13,7 +13,7 @@ The Quick Chart file format is officially a closed specification file format. Ho
 This specification is known to be incomplete, and although best attempts have been made to ensure that it is accurate, it is impossible to guarantee this.
 This specification has been released with the intention that developers can use it to create conversion tools, input/output plugins or even mobile apps.
 
-'''This information was NOT obtained by means of reverse engineering software applications.'''
+**This information was NOT obtained by means of reverse engineering software applications.**
 
 ## Licence
 Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation Licence, Version 1.2 or any later version published by the Free Software Foundation.
