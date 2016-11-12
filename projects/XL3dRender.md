@@ -14,6 +14,7 @@ In some spare time in the summer of 2002 a work colleague, Christopher Allen was
 Shortly after this, I visited a performance by a traditional travelling theatre. At one point in the performance, a 3D visualisation was projected onto a screen in the middle of the stage from behind. The effect produced a smooth 3D fly through of a wire frame cathedral and town the screen. This visualisation blew my mind since the entire performance was low-tech, no electrical or battery powered appliances were used in the theatre. This ruled out the use of cameras, projectors and all lighting in the theatre was either by means of candle, gas, limelight etc.. The theatre was basically a tent in a field.
 
 I later discovered that they had produced this effect by using a real wire frame model and a very bright magnesium point light source. The shadow produced on the screen was simply a shadow image, and the effect of perspective and movement were naturally taken care of by moving the model in front of the light source with steady hands. Words cannot describe how impressive this visualisation was, given that no technology post 1880 was used.
+
 ![3D Projection](img/XL3DRender-3DProjection.png)
 
 Afterwards, while describing the 3D visualisation effect, and explaining how it worked, we figured that it would theoretically be possible to produce such an image using the VBA drawing functions we had already written in Excel. Why not!
