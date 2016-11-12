@@ -283,7 +283,7 @@ A new directory should have been created:
 The number of object files will vary depending on the firmware version installed, and what previous
 firmware versions have been installed.
 
-### (4) Modify Settings
+### (4) Modify the Settings
 We now need to make alterations to activate the serial console, to enable remote management, and to activate telnet support on the LAN side.
 Edit the files below in this case 020_Ntgr.cobj using a hex editor.
 Make the changes as indicated by the byte enclosed in square brackets in the following tables
@@ -422,7 +422,7 @@ You should now have the following new file:
 
     my_modem.img.dynamic_modified (65536 Bytes)
 
-### (6) Write the Firmware Image to the Modem's Flash Memory
+### (6) Write the Dynamic Settings to the Modem's Flash Memory
 Finally, program the dynamic settings back to the flash memory:
 
     spi_prog /dev/ttyUSB0 -w 0x7F0000 my_modem.img.dynamic_modified
