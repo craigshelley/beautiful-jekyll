@@ -42,8 +42,9 @@ For each 3D coordinate, the coordinates are first rotated and offset, then proje
 
 ## Download
 To download XL3DRender, follow the links below. Additional objects can be added by simply pasting them into the spreadsheet. Feel free to experiment, and create 3D shapes of your own.
+**Macros must be enabled in MS Excel** Also note that Excel security settings may prevent the macros from running unless it is saved to disk first.
 
-* [XL3DRender.xls](https://raw.githubusercontent.com/craigshelley/XL3DRender/master/XL3DRender.xls) Excel spreadsheet with 3D rendering engine. **Macros must be enabled in MS Excel** Also note that Excel security settings may prevent the macros from running unless it is saved to disk first.
+* [XL3DRender.xls](https://raw.githubusercontent.com/craigshelley/XL3DRender/master/XL3DRender.xls) 3D Rendering Excel spreadsheet.
 * [Arrow.txt](https://raw.githubusercontent.com/craigshelley/XL3DRender/master/Arrow.txt) A 3D arrow head.
 * [Boxoid.txt](https://raw.githubusercontent.com/craigshelley/XL3DRender/master/Boxoid.txt) Three intersecting cuboids.
 * [Crystal.txt](https://raw.githubusercontent.com/craigshelley/XL3DRender/master/Crystal.txt) A 3D Crystal shape.
