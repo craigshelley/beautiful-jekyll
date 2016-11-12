@@ -6,7 +6,7 @@ title: Excel 3D Rendering
 subtitle: Draw 3D Wireframe Graphics using a Microsoft Excel VBA Macro
 projectlogo: XL3DRender.png
 ---
-XL3DRender is a Microsoft Excel VBA macro (Office 97) which draws animated 3D wire frame graphics using a spreadsheet as raster pixel array. By making the spreadsheet cells very small and turning off the grid lines, a basic raster display can be produced by changing the background colour of the cells. With a bit of imagination it is possible to use this to generate graphical output, or even draw 3D shapes or animations.
+XL3DRender is a Microsoft Excel VBA macro created in MS Office 97 which draws animated 3D wire frame graphics using spreadsheet cells as raster pixel array. By making the spreadsheet cells very small and turning off the grid lines, a basic raster display can be produced by changing the background colour of the cells. With a bit of imagination it is possible to use this to generate graphical output, or even draw 3D shapes or animations.
 
 ## The Idea
 In some spare time in the summer of 2002 a work colleague, Christopher Allen was working on the idea of writing a simple game such as Snake to run in Excel. The Snake game had received renewed popularity at the time due to its presence on affordable Nokia mobile phones. I had previously demonstrated a VBA macro of [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) using the background colour of the spreadsheet cells, however for a game such as Snake we ran into difficulties while trying to get interactive user input to work correctly. We came to the conclusion that VBA wasn't designed for writing games! Despite this, I had already written the code to draw basic shapes and lines using [Bresenham's line algorithm](https://en.wikipedia.org/wiki/Bresenham's_line_algorithm)
@@ -48,11 +48,11 @@ To download XL3DRender, follow the links below. Additional objects can be added 
 * [[media:crystal.txt|crystal.txt]] A 3D Crystal shape.
 
 ## Credits
-* Christopher Allen - 3D objects, testing and debugging
-* [mailto:craig@microtron.org.uk Craig Shelley] - Coding
+* [Christopher Allen](https://www.linkedin.com/in/chris-allen-17661a9) - 3D objects, testing and debugging
+* [Craig Shelley](mailto:craig@microtron.org.uk) - Coding
 
-If you have any questions/queries or have created new objects that you would like to share, just drop me an [mailto:craig@microtron.org.uk email].
+If you have any questions/queries or have created new objects that you would like to share, my contact details are listed at the bottom of the page.
 
 ## Links
-* [http://www.gamasutra.com/view/feature/3563/microsoft_excel_revolutionary_3d_.php http://www.gamasutra.com/view/feature/3563/microsoft_excel_revolutionary_3d_.php] Sorry guys, we have beaten you to it!
-* [http://developers.slashdot.org/article.pl?sid=08/03/06/1732220&from=rss http://developers.slashdot.org/article.pl?sid=08/03/06/1732220&from=rss] So that's why this website went down!
+* [http://www.gamasutra.com/view/feature/3563/microsoft_excel_revolutionary_3d_.php](http://www.gamasutra.com/view/feature/3563/microsoft_excel_revolutionary_3d_.php) This is later implementation which looks almost identical, but is unrelated.
+* [http://developers.slashdot.org/article.pl?sid=08/03/06/1732220&from=rss](http://developers.slashdot.org/article.pl?sid=08/03/06/1732220&from=rss) The traffic from this article brought my web server down for several days - sorry.
