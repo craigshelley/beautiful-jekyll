@@ -26,12 +26,9 @@ All source code is distributed under the terms of the GNU General Public Licence
 ## Download
 The source code for the Super Hub Integration Tools is available on GitHub:
 
-https://github.com/craigshelley/SuperHubIntegrationTools
+[https://github.com/craigshelley/SuperHubIntegrationTools](https://github.com/craigshelley/SuperHubIntegrationTools)
 	
-
-### SPIProgrammer
-This directory contains software and firmware and instructions for building your own SPI programmer to
-read/write data from/to the 8MB flash memory chip within the modem.
+## Description of Utilities
 
 ### extractmemorydump
 This utility separates the individual components which comprise the firmware in the 8MB image file.
@@ -112,6 +109,13 @@ It extracts the LZMA compressed data to a .lzma file, decompresses it using the 
 and then attempts to disassemble the machine code using objdump to a .asm file.
 Beware, this shell script is not very robust, don't let it eat your data!
 Note: It is normal to see a warning "Unexpected end of input"
+
+### spi_prog
+This tool is located in the SPIProgrammer sub-directory and is used to interface with programming hardware to enable the modem's 8MB flash memory chip to be read, written and erased. The tool also enables reading/writing to specific memory areas on the device which can be a significant time saving.
+The detailed documentation for this tool can be obtained from the [SPIProgrammer/Readme.txt](https://raw.githubusercontent.com/craigshelley/SuperHubIntegrationTools/master/SPIProgrammer/Readme.txt).
+
+### SPIProgrammer.hex
+The electrical interface between the host PC and the [Spansion S25FL064A](http://www.cypress.com/file/196856/download) 8MB flash memory chip was provided by means of USB-UART and a PIC microcontroller. After compiling the source code, SPIProgrammer.hex contains the assembled PIC firmware which communicates with the spi_prog tool, and provides an SPI interface to the target flash memory chip.
 
 ## Building the Tools
 
