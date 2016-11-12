@@ -35,7 +35,7 @@ The animated fly through is achieved by rotating and offsetting the 3D object wi
 ### Double Buffering
 This method involves using two worksheets, one for drawing and one for display. Since only one sheet can be selected and displayed at any given time, the hidden sheet is used for drawing. As soon as the drawing operation is complete, the hidden worksheet is selected to become the displayed worksheet. This instantaneously displays the next frame in the sequence. The previous frame is simultaneously hidden, and is used for the drawing of the next frame in the sequence. This process ensures that the animated effect is preserved, and the viewer does not see any partially rendered images. This also gives a performance increase because the image being rendered is not being continually refreshed to the screen as each pixel is updated. The screen is only refreshed once when the active worksheet is flipped.
 
-## Data Flow
+### Data Flow
 ![XL3DRender Flow Diagram](img/XL3DRender-dfd.png)
 
 This 3D rendering engine can be summarised with a relatively simple data flow. The data originates from a spreadsheet table, with each row in the table representing a line to be drawn. The line is defined by an X1,Y1,Z1 starting point coordinate, and an X2,Y2,Z2 ending point coordinate.
