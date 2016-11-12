@@ -22,6 +22,7 @@ These utilities have been developed with the intention that they are used for *L
 The utilities have been provided in source code form, and must be compiled in order to use them.
 
 All source code is distributed under the terms of the GNU General Public Licence.
+
     This is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
@@ -36,7 +37,7 @@ All source code is distributed under the terms of the GNU General Public Licence
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 	
 
-## SPIProgrammer
+### SPIProgrammer
 This directory contains software and firmware and instructions for building your own SPI programmer to
 read/write data from/to the 8MB flash memory chip within the modem.
 
@@ -128,11 +129,10 @@ Prerequisites:
 * gputils - For SPI Programmer
 
 Build commands:
-```
-make
-cd SPIProgrammer
-make
-```
+
+    make
+    cd SPIProgrammer
+    make
 
 If the process is successful, there will be no error messages.
 The compiled binaries now need to be manually copied to somewhere that is on the system path.
@@ -146,71 +146,65 @@ The extracted firmware will be modified to enable the serial console and telnet.
 First extract a full backup image of the whole EEPROM. This takes about 12 Minutes.
 Ensure you see the line "Device ID 0x010216" displayed, otherwise there may be a communication 
 fault between the EEPROM and the PIC.
-```
-spi_prog /dev/ttyUSB0 -r 0x000000 0x800000 my_modem.img
-```
+
+    spi_prog /dev/ttyUSB0 -r 0x000000 0x800000 my_modem.img
+    
 You should see the following output in the terminal:
-```
-Flushing buffers...
-Handshake..
-Query ID..
-Device ID 0x010216
-Reading data 0x00000000-0x00800000 (0x00800000)...
-```
+
+    Flushing buffers...
+    Handshake..
+    Query ID..
+    Device ID 0x010216
+    Reading data 0x00000000-0x00800000 (0x00800000)...
 
 If this succeeds, you should have the following file:
-```
-my_modem.img       (8388608 bytes)
-```
+
+    my_modem.img       (8388608 bytes)
 
 Verify that the file contains data using a hex editor:
-```
-00000000   0B F0 03 21  00 00 00 00  40 08 80 01  03 E0 88 21  ...!....@......!
-00000010   00 08 24 02  04 11 00 0A  00 00 00 00  01 20 A0 21  ..$.......... .!
-00000020   01 40 B0 21  00 08 21 C2  04 11 00 05  00 00 00 00  .@.!..!.........
-00000030   01 20 A8 21  01 40 B8 21  02 20 00 08  00 00 00 00  . .!.@.!. ......
-00000040   24 09 00 40  30 8A 01 C0  00 0A 51 82  01 49 48 04  $..@0.....Q..IH.
-00000050   30 8A 00 38  00 0A 50 C2  11 40 00 09  00 00 00 00  0..8..P..@......
-00000060   24 0B 00 02  01 4B 50 04  30 8B 00 07  21 6B 00 01  $....KP.0...!k..
-00000070   71 69 48 02  71 2A 48 02  10 00 00 03  00 00 00 00  qiH.q*H.........
-```
+
+    00000000   0B F0 03 21  00 00 00 00  40 08 80 01  03 E0 88 21  ...!....@......!
+    00000010   00 08 24 02  04 11 00 0A  00 00 00 00  01 20 A0 21  ..$.......... .!
+    00000020   01 40 B0 21  00 08 21 C2  04 11 00 05  00 00 00 00  .@.!..!.........
+    00000030   01 20 A8 21  01 40 B8 21  02 20 00 08  00 00 00 00  . .!.@.!. ......
+    00000040   24 09 00 40  30 8A 01 C0  00 0A 51 82  01 49 48 04  $..@0.....Q..IH.
+    00000050   30 8A 00 38  00 0A 50 C2  11 40 00 09  00 00 00 00  0..8..P..@......
+    00000060   24 0B 00 02  01 4B 50 04  30 8B 00 07  21 6B 00 01  $....KP.0...!k..
+    00000070   71 69 48 02  71 2A 48 02  10 00 00 03  00 00 00 00  qiH.q*H.........
 
 If this has succeeded, then you have successfully created a backup of the whole EEPROM,
 which can be restored to at any point in the future if things go wrong. Keep the file safe!
 
-Now extract the various firmware components using:
-```
-extractmemorydump my_modem.img 
-```
+Next extract the various firmware components using:
+
+    extractmemorydump my_modem.img 
 
 This should produce the following output (or very similar):
-```
-0x000000 - 0x0062fc Bootloader:          0x0062FC bytes > my_modem.img.bootloader
-0x010000 - 0x020000 Permanent Settings:  0x010000 bytes > my_modem.img.permanent
-0x7f0000 - 0x800000 Dynamic Settings:    0x010000 bytes > my_modem.img.dynamic
+
+    0x000000 - 0x0062fc Bootloader:          0x0062FC bytes > my_modem.img.bootloader
+    0x010000 - 0x020000 Permanent Settings:  0x010000 bytes > my_modem.img.permanent
+    0x7f0000 - 0x800000 Dynamic Settings:    0x010000 bytes > my_modem.img.dynamic
 
 
-Image 1 Program Header:
-   Signature: a0e7
-     Control: 0005
-   Major Rev: 0003
-   Minor Rev: 0000
-  Build Time: 2012/5/28 10:59:34 Z
- File Length: 3296519 bytes
-Load Address: 80004000
-    Filename: CG3101D_2VGUKS_V5.5.5R36_D30RG11u_20120528.bin
-         HCS: 69b0
-         CRC: 8cad7588
-0x020000 - 0x344d63 Image 1:    0x324D63 bytes > my_modem.img.image_0x020000
-```
+    Image 1 Program Header:
+       Signature: a0e7
+         Control: 0005
+       Major Rev: 0003
+       Minor Rev: 0000
+      Build Time: 2012/5/28 10:59:34 Z
+     File Length: 3296519 bytes
+    Load Address: 80004000
+        Filename: CG3101D_2VGUKS_V5.5.5R36_D30RG11u_20120528.bin
+             HCS: 69b0
+             CRC: 8cad7588
+    0x020000 - 0x344d63 Image 1:    0x324D63 bytes > my_modem.img.image_0x020000
+    
 You should now have the following files new files:
 
-```
-my_modem.img.bootloader       (  25340 bytes)
-my_modem.img.permanent        (  65536 bytes)
-my_modem.img.image_0x020000   (3296611 bytes)
-my_modem.img.dynamic          (  65536 bytes)
-```
+     my_modem.img.bootloader       (  25340 bytes)
+     my_modem.img.permanent        (  65536 bytes)
+     my_modem.img.image_0x020000   (3296611 bytes)
+     my_modem.img.dynamic          (  65536 bytes)
 
 The file size of the main firmware image will vary with firmware version.
 
