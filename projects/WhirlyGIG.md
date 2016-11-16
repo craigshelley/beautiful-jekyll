@@ -14,7 +14,7 @@ This page documents a project from 1999-2000 and is now quite dated, as will be 
 
 This project was inspired by a publication in [Practical Electronics Magazine](http://www.epemag.wimborne.co.uk) December 1994, called 'Space Writer Wand'. The article gave the full build instructions for a hand-held wand which would magically write messages in the air. Furthermore, the Space Writer had an incredibly simple schematic and could easily be understood by a 12 year old curious mind. The only drawback of this project was that it involved sending off by mail order to the author for a 'pre-programmed microcontroller', the cost of which could not be justified.
 
-In 1998, Practical Electronics magazine published a series of articles with the title 'EPE PIC Tutorial'. The doors to a new world of microcontroller programming were now open, and following an initial projects to build a PIC based motor speed controllers for RC cars, the Space Writer project from four years earlier suddenly became viable. The first attempt at replicating the Space Writer project from 1994 yeilded an unsatisfactory result for two reasons. Firstly, the mercury tilt switch which was used to detect the start of movement was notoriously unreliable at triggering at a repeatably and a lot of practice was needed in order to achieve the correct swing of the wand. Secondly, the LEDs used were too dim, and despite being driven with more than the rated current, the lights in the room needed to be turned off in order for the messages to be visible.
+In 1998, Practical Electronics magazine published a series of articles with the title 'EPE PIC Tutorial'. The doors to a new world of microcontroller programming were now open, and following an initial projects to build a PIC based motor speed controllers for RC cars, the Space Writer project from four years earlier suddenly became viable. The first attempt at replicating the Space Writer project from 1994 yielded an unsatisfactory result for two reasons. Firstly, the mercury tilt switch which was used to detect the start of movement was notoriously unreliable at triggering consistently and a lot of practice was needed in order to achieve the correct swing of the wand. Secondly, the LEDs used were too dim, and despite being driven with more than the rated current, the lights in the room needed to be turned off in order for the messages to be visible.
 The WhirlyGIG was developed to overcome these problems, and produce a vivid, stable, animated display.
 
 Numerous clocks and gadgets have since been made commercially available which write messages in the air. There will of course now be better documented projects using [Arduino](https://www.arduino.cc), which would in most cases be the preferred route for most electronics hobbyists to build their own persistence of vision display.
@@ -60,7 +60,7 @@ This PCB is used in conjunction with a stationary spring to commutate electrical
 The motor shaft is used as the electrical return path. 
 The LED strip is fastened to the rotor by stiff copper wires. 
 The control PCB and a set of counter weights are also attached to the rotor using nuts and bolts. 
-In order for the control circuit to have a repetable trigger point in the cycle, a photo interrupter is used to create a pulse at a specific point in every rotation. 
+In order for the control circuit to have a repeatable trigger point in the cycle, a photo interrupter is used to create a pulse at a specific point in every rotation. 
 The photo-interrupter requires a stationary flag fixed to the base.
 
 ## Control Circuit
@@ -68,7 +68,7 @@ The control circuit controls the power to the motor and LEDs.
 It receives signals from the photo interrupter and the power source. 
 Since there is only one electrical connection that passes to the rotor (that used for power), the communications link from the computer is achieved by modulating the data onto the power supply.
 At the heart of this circuit is a PIC16C84 micro-controller. 
-This is clocked using a 4.43361875MHz crystal (nodoubt obtaied from an old colour TV), and supplied with 5V from a voltage regulator. All LED outputs are buffered using bipolar NPN transistors. 
+This is clocked using a 4.43361875MHz crystal (likely salvaged from a TV), and supplied with 5V from a voltage regulator. All LED outputs are buffered using bipolar NPN transistors. 
 The LED strip therefore has a common anode arrangement.
 The motor is controlled by the PIC using a Power MOSFET.
 
@@ -82,7 +82,7 @@ The schematic diagram of the WhirlyGIG is quite simple because all of the hard w
 **WARNING** be extra careful when making connections to a computer. The communication circuit ASSUMES that the power supply used is completely **isolated and floating** with respect to that of the computer. They must NOT share a common ground/0V line. This circuit does not in any way conform to the RS232 interconnection specifications.
 
 ## Power
-Although it is a little unorthordox to use the motor in an inverted configuration, and have the control circuit rotating at high speed, this configuration dramatically reduces the number of electrical connections that have to be made to the spinning rotor.
+Although it is a little unorthodox to use the motor in an inverted configuration, and have the control circuit rotating at high speed, this configuration dramatically reduces the number of electrical connections that have to be made to the spinning rotor.
 The current design uses the motor shaft as the ground, and +Ve pick-up on the underside of the rotor PCB. 
 A bent radial spring, insulated from the base using a grommet, is used to commutate power primarily because it provides a low friction, low wear contact.
 The data modulation from the PC serial port is achieved using a power MOSFET biased to be normally on when the serial port is in its inactive state.
@@ -92,7 +92,7 @@ It is recommended that this part of the circuit be revisited and extra protectio
 ## Software
 The software is by far the most complicated part of the design. Two separate programs were written for the PIC, one with a hard-coded 256 character string, and one with the ability to receive data from a computer serial port. Both programs use every byte of program memory the PIC has to offer.
 The software is written in PIC assembler, but sub-divided into functions that perform specific tasks. These functions are then all called from within a main loop, and from the interrupt handling routines. The program utilises two jump tables. The first contains the character string to be displayed. The second contains the font face information. The character strings are stored as ASCII values. A decode function is used to decode these values into the correct indexes for the font table.
-A self-test routine is used on start-up to confirm the motor and electrical pickup are sufficiently free to turn, and that the rotor is in ballance. This is achieved by measuring the acceleration and deceleration characteristics of the rotor while the power to the motor is modulated using PWM. Full power is only applied to the motor once it has has passed this self test, and the rotor has achieved a rotational speed of at least 150 RPM. If the speed of the rotor reduces below 300RPM during normal operation, the the self-test is re-run. Due to the loading on the motor bearings, they require lubrication to be applied approximately every four hours in order to achieve the correct operating speed.
+A self-test routine is used on start-up to confirm the motor and electrical pick-up are sufficiently frictionless, and that the rotor is in balance. This is achieved by measuring the acceleration and deceleration characteristics of the rotor while the power to the motor is modulated using PWM. Full power is only applied to the motor once it has has passed this self test, and the rotor has achieved a rotational speed of at least 150 RPM. If the speed of the rotor reduces below 300RPM during normal operation, the the self-test is re-run. Due to the loading on the motor bearings, they require lubrication to be applied approximately every four hours in order to achieve the correct operating speed.
 The serial version also has the routines to handle the serial communication. This includes buffer handling functions. On start up, the buffer is loaded with a default string Hard-Coded into program memory.
 Since the communication is simplex, synchronisation characters have to be introduced into the stream. These special characters ensure that the computer and WhirlyGIG are synchronised by freezing the display between message updates. The display is unfrozen when the synchronisation character has been erased from the buffer.
 This requires the computer to keep track of the buffer, and using a combination of accurate timing and synchronisation characters, a continuous stream of text can be achieved.
