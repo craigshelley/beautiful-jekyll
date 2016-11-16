@@ -101,10 +101,10 @@ Finally, there are two special characters for turning off and on the motor.
 ## Downloads
 * [Schematic Diagram](https://raw.githubusercontent.com/craigshelley/WhirlyGIG/master/WhirlyGIG-Schematic.png)
 * [PCB Layout](https://raw.githubusercontent.com/craigshelley/WhirlyGIG/master/WhirlyGIG-PCB.png)
-* PIC Software 256 Char Hard Coded [Whirlygig.asm](https://raw.githubusercontent.com/craigshelley/WhirlyGIG/master/Whirlygig.asm) Assembly Code.
-* PIC Software Serial Communication [Whirlygigs.asm](https://raw.githubusercontent.com/craigshelley/WhirlyGIG/master/Whirlygigs.asm) Commented Assembly Code
-* Courier Display Font [Courier-Font.png](https://raw.githubusercontent.com/craigshelley/WhirlyGIG/master/Courier-Font.asm) Assembler Data Tables
-* Communication program [Whirlygig-sender.pl](https://raw.githubusercontent.com/craigshelley/WhirlyGIG/master/Whirlygig-sender.pl) Perl Script
+* [Whirlygig.asm](https://raw.githubusercontent.com/craigshelley/WhirlyGIG/master/Whirlygig.asm) PIC assembly for 256 character hard-coded message
+* [Whirlygigs.asm](https://raw.githubusercontent.com/craigshelley/WhirlyGIG/master/Whirlygigs.asm) PIC assembly code for serial communication
+* [Courier-Font.asm](https://raw.githubusercontent.com/craigshelley/WhirlyGIG/master/Courier-Font.asm) Courier font
+* [Whirlygig-sender.pl](https://raw.githubusercontent.com/craigshelley/WhirlyGIG/master/Whirlygig-sender.pl) Perl script communication program 
 
 ## Specifications
 * Display resolution: 150x8 pixels
