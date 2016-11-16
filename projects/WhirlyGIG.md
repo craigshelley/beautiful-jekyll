@@ -63,8 +63,8 @@ The control PCB and a set of counter weights are also attached to the rotor usin
 In order for the control circuit to have a repeatable trigger point in the cycle, a photo interrupter is used to create a pulse at a specific point in every rotation. 
 The photo-interrupter requires a stationary flag fixed to the base.
 
-## Control Circuit
-The control circuit controls the power to the motor and LEDs. 
+## Circuit Description
+The main PCB controls the power to the motor and LEDs. 
 It receives signals from the photo interrupter and the power source. 
 Since there is only one electrical connection that passes to the rotor (that used for power), the communications link from the computer is achieved by modulating the data onto the power supply.
 At the heart of this circuit is a PIC16C84 micro-controller. 
@@ -78,7 +78,7 @@ Diodes are used to isolate the incoming supply from the smoothing capacitors, al
 This raw supply voltage is then limited to 5V using a resistor and Zener diode, and used as a serial data input to the PIC.
 Ribbon cables are used to interconnect the control PCB to the LED strip.
 
-The schematic diagram of the WhirlyGIG is quite simple because all of the hard work is done by the PIC micro-controller. The data/power modulator circuit shown on the right of the schematic diagram modulates RS232 data from a PC serial port onto the power supply of the WhirlyGig. This removes the need to use a third electrical connection for data. In order to receive the data, the PIC must be programmed with the Serial Communication version of the firmware, see the Downloads section.
+The [schematic diagram](img/WhirlyGIG-Schematic.png) of the WhirlyGIG is relatively simple because of the micro-controller based design. The data/power modulator circuit shown on the right of the schematic diagram modulates RS232 data from a PC serial port onto the power supply of the WhirlyGig. This removes the need to use a third electrical connection for data. In order to receive the data, the PIC must be programmed with the Serial Communication version of the firmware, see the Downloads section.
 **WARNING** be extra careful when making connections to a computer. The communication circuit ASSUMES that the power supply used is completely **isolated and floating** with respect to that of the computer. They must NOT share a common ground/0V line. This circuit does not in any way conform to the RS232 interconnection specifications.
 
 ## Power
@@ -99,10 +99,12 @@ This requires the computer to keep track of the buffer, and using a combination 
 Finally, there are two special characters for turning off and on the motor.
 
 ## Downloads
-* PIC Software 256 Char Hard Coded [[Media:whirlygig.asm|whirlygig.asm]] Assembly Code.
-* PIC Software Serial Communication [[Media:whirlygigs.asm|whirlygigs.asm]] Well Commented Assembly Code
-* Courier Display Font [[Media:Courier-Font.asm|Courier-Font.asm]] Assembler Data Tables
-* Communication program [[Media:whirlygig-sender|whirlygig-sender]] Uncommented Perl Script
+* [Schematic Diagram](https://raw.githubusercontent.com/craigshelley/WhirlyGIG/master/WhirlyGIG-Schematic.png)
+* [PCB Layout](https://raw.githubusercontent.com/craigshelley/WhirlyGIG/master/WhirlyGIG-PCB.png)
+* PIC Software 256 Char Hard Coded [Whirlygig.asm](https://raw.githubusercontent.com/craigshelley/WhirlyGIG/master/Whirlygig.asm) Assembly Code.
+* PIC Software Serial Communication [Whirlygigs.asm](https://raw.githubusercontent.com/craigshelley/WhirlyGIG/master/Whirlygigs.asm) Commented Assembly Code
+* Courier Display Font [Courier-Font.png](https://raw.githubusercontent.com/craigshelley/WhirlyGIG/master/Courier-Font.asm) Assembler Data Tables
+* Communication program [Whirlygig-sender.pl](https://raw.githubusercontent.com/craigshelley/WhirlyGIG/master/Whirlygig-sender.pl) Perl Script
 
 ## Specifications
 * Display resolution: 150x8 pixels
