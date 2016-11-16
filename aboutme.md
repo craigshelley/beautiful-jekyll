@@ -22,3 +22,5 @@ The following interests have drifted by, and resurface from time to time:
 - Open source software
 - C Programming
 - Software Defined Radio
+- Skating
+- Slacklining
