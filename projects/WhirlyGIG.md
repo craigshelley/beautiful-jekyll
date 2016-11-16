@@ -4,7 +4,7 @@ pagetype: project
 permalink: /WhirlyGIG
 title: WhirlyGIG
 subtitle: A Persistence of Vision Scrolling Text Display
-projectlogo: ????????
+projectlogo: WhirlyGIG.jpg
 ---
 
 The WhirlyGIG writes scrolling messages in the air using only 8 LEDs. The LEDs sweep through the air on the end of a rotating arm and flash in sequence to produce the message display.
