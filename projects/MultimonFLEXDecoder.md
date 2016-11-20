@@ -4,7 +4,7 @@ pagetype: project
 permalink: /MultimonFLEXDecoder
 title: Multimon FLEX Decoder
 subtitle: An Open Source Decoder for the FLEX Paging Protocol
-projectlogo: ????????
+projectlogo: MultimonFLEXDecoder.png
 ---
 
 This is the project page for an open source implementation of a [FLEX paging protocol](https://en.wikipedia.org/wiki/FLEX_(protocol)) decoder for use with [Multimon-ng](https://github.com/EliasOenal/multimon-ng). With the widespread use of cellular networks, the use of pagers has seen a significant decline however under certain circumstances, pagers can provide a more reliable means of communication in unpopulated areas, and are still popular in certain service industries.
